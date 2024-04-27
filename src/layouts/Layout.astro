@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
 
 interface Props {
 	title: string;
@@ -43,4 +43,24 @@ const { title } = Astro.props;
 		background-size: 224px;
 	}
 	body { margin: 0 }
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: #333;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.nav-btn {
+      border:0;
+      padding: 0;
+      margin:0;
+      width: 50px;
+      background: none;
+      fill: white;
+      cursor:pointer;
+      position: relative;
+    }
+	ul,ol,li {list-style-type: none; margin: 0; padding: 0;}
 </style>

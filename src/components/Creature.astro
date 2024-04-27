@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string;
+    latinName: string;
+    img: string;
+    img2: string;
+}
+
+const { title, latinName, img, img2 } = Astro.props;
+---
+    
+    <section>
+        <h2>{title}</h2>
+        <h3>{latinName}</h3>
+
+        <img src={img} alt={title} />
+        <img src={img2} alt={title} />
+        
+        <slot />
+       
+        
+
+        
+    </section>
+    
+    

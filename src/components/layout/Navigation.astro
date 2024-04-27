@@ -1,0 +1,85 @@
+---
+
+---
+
+<script>
+    const navBtn = document.querySelector('.nav-btn');
+    const btnSvg = document.querySelectorAll('.nav-btn svg');
+    const header = document.querySelector('header');
+    navBtn.addEventListener('click', e => {
+        header.classList.toggle('menu-open');
+        btnSvg.forEach(svg => svg.classList.toggle('hidden'));
+    })
+</script>
+<nav class="main-nav">
+
+    <ul class="nav-main-page">
+        <li><a href="/">Accueil</a>
+        <li><a href="/">Le parcours</a>            
+    </ul>
+    <span>Les insectes</span>
+    <ul class="nav-bug-page">
+        <li><a href="/la-coccinelle">La coccinelle</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+        <li><a href="/la-coccinelle">Insecte x</a>
+    </ul>
+</nav>
+
+<style>
+    .main-nav {
+        transition: all 0.15s ease-in;
+        /*transition: max-height 0.1s ease-in;*/
+        margin: 1rem 0;
+        text-align: center;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        transform: scaleY(0);
+        transform-origin: 0 0;
+        max-height: 0;
+        opacity: 0;
+    }
+    .main-nav ul {
+        display: flex;
+        gap: 1rem;
+    }
+    .main-nav ul.nav-bug-page {
+        flex-wrap: wrap;
+    }
+    .main-nav ul.nav-bug-page li {
+        flex-basis: 20%;
+    }
+
+    .main-nav ul li {
+        flex-grow: 1;
+        padding: .5rem;
+        background-color: rgba(255,255,255,0.15);
+        backdrop-filter: hue-rotate(50deg);
+        transition: all 0.4s ease-in;
+    }
+    .main-nav ul li:hover {
+        backdrop-filter: hue-rotate(180deg);
+    }
+    .main-nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+    .main-nav span {
+        margin-top: 1rem;
+        display: block;
+        font-size: 1.75rem;
+    }
+
+    :global(.menu-open) .main-nav {
+        transform: scaleY(1);
+        max-height: 50vh;
+        opacity: 1;
+    }
+</style>

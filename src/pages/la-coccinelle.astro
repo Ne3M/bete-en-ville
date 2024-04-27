@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    
+    <Creature
+    title="La coccinelle"
+    latinName="Coccinella septempunctata"
+    img="https://picsum.photos/200/200"
+    img2="https://picsum.photos/300/300"
+    >
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, error repudiandae. Exercitationem non vitae ducimus totam reprehenderit, quo sed deserunt explicabo. Commodi, optio. Ab numquam quas blanditiis reprehenderit, illo molestias?
+    </p>
+    
+    <Viewer 
+    alt="Astronaut"
+    src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp"
+    />
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

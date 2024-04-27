@@ -1,0 +1,111 @@
+---
+import Navigation from './Navigation.astro';
+---
+<script>
+  const header = document.querySelector("header")
+  const observer = new IntersectionObserver( 
+    ([e]) => {
+      e.target.classList.toggle("is-pinned", e.intersectionRatio < 1);
+    },
+    { threshold: [1] }
+  );
+  observer.observe(header);
+</script>
+
+<header>
+
+  <div class="header-top">
+    <button class="nav-btn">
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Ouvrir le menu</title>
+          <path fill-rule="evenodd" d="M19 4a1 1 0 01-1 1H2a1 1 0 010-2h16a1 1 0 011 1zm0 6a1 1 0 01-1 1H2a1 1 0 110-2h16a1 1 0 011 1zm-1 7a1 1 0 100-2H2a1 1 0 100 2h16z"/>
+        </svg>
+
+        <svg class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 490 490" >
+          <path d="M457 0 245 213 33 0 1 32l212 213L1 458l32 32 212-213 212 213 32-32-212-213L489 32z"/>
+        </svg>
+    </button>
+    <h1><img src="./src/images/logo.png" alt="Les petites bêtes en ville" /></h1>
+</div>
+<Navigation />
+<div class="header-intro">
+  <strong>Les petites bêtes en ville</strong>
+  <p>A la découverte des insectes qui peuples nos villes</p>
+</div>
+  
+</header>
+
+
+
+<style>
+  .hidden {display: none;}
+  header { 
+    position: sticky;
+    top:-1px;
+    padding: 1rem;
+    color: #fff;
+    background: url("./src/images/nature.jpg") no-repeat 0 0
+  }
+
+  .header-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+   
+    h1 {
+      margin: 0;
+    }
+    h1 img {
+      width: 80px;
+      filter: drop-shadow(2px 0px 0 white) 
+      drop-shadow(0 -2px 0 white) 
+      drop-shadow(0 2px 0 white) 
+      drop-shadow(-2px 0 0 white);
+    }
+
+
+
+  .header-intro {
+    position: relative;
+    margin: auto;
+    max-height: 200px;
+    width: 50%;
+    background-color: rgba(255,255,255,0.15);
+    backdrop-filter: saturate(3);
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.2s ease-in
+  }
+    .is-pinned .header-intro,
+    :global(.menu-open) .header-intro {
+      max-height:0px;
+      opacity:0;
+      padding: 0;
+    }
+    .header-intro:before,
+    .header-intro:after {
+      content:"";
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: .75rem;
+      right: .75rem;
+      border: 2px #fff solid;
+      border-width: 2px 2px 0 0;
+    }
+    .header-intro:after {
+      border-width: 0 0 2px 2px;
+      bottom: .75rem;
+      left: .75rem;
+      top: auto;
+      right: auto;
+    }
+
+    .header-intro strong {
+      font-size: 2rem;
+    }
+    .header-intro p {
+      font-style: italic;
+    }
+</style>
