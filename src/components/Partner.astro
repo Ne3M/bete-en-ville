@@ -1,0 +1,18 @@
+---
+interface Props {
+	name: string;
+	toto: string;
+  linkText?: string;
+	linkUrl?: string;
+}
+
+const { name, toto, linkText, linkUrl } = Astro.props;
+---
+
+<section>
+  <h2>{name}</h2>
+  <img src="{toto}" alt="{name}">
+  <slot />
+  <a href="{link}" target="_blank" rel="noopener noreferrer">{linkText}</a>
+</section>
+
