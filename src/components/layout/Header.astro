@@ -1,5 +1,8 @@
 ---
 import Navigation from './Navigation.astro';
+import headerImg from '../../images/nature.jpg';
+import logo from '../../images/logo.png';
+const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
 ---
 <script>
   const header = document.querySelector("header")
@@ -25,26 +28,26 @@ import Navigation from './Navigation.astro';
           <path d="M457 0 245 213 33 0 1 32l212 213L1 458l32 32 212-213 212 213 32-32-212-213L489 32z"/>
         </svg>
     </button>
-    <h1><img src="./src/images/logo.png" alt="Les petites bêtes en ville" /></h1>
+    <h1><img src={logo.src} alt="Les petites bêtes en ville" /></h1>
 </div>
 <Navigation />
 <div class="header-intro">
   <strong>Les petites bêtes en ville</strong>
-  <p>A la découverte des insectes qui peuples nos villes</p>
+  <p>A la découverte des insectes qui peuples nos villes {bgUrl}</p>
 </div>
   
 </header>
 
 
-
-<style>
+<style define:vars={{ bgUrl }}>
   .hidden {display: none;}
   header { 
     position: sticky;
     top:-1px;
     padding: 1rem;
     color: #fff;
-    background: url("./src/images/nature.jpg") no-repeat 0 0
+    background: var(--bgUrl);
+    background-size: cover;
   }
 
   .header-top {
