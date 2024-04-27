@@ -1,12 +1,31 @@
 ---
 ---
 <style>
-  footer { color: white }
+  footer { color: white; background: #13151a; }
+  
 </style>
 <footer>
 
-Villeneuve d'ascq
-Ferme d'en Haut
-MEL
+<ul>
+<li> <img src="https://www.villeneuvedascq.fr/themes/custom/spe/images/vasqc-logo.png" alt="Villeneuve d'ascq">
+<li> <img src="https://lafermedenhaut.villeneuvedascq.fr/themes/custom/ferme_d_en_haut/fermedenhaut.jpg" alt="la ferme d'en haut">
+<li>  <img src="https://www.lillemetropole.fr/sites/default/files/logo-mel_0.jpg" alt="MEL">
+</ul>
 
 </footer>
+
+<style>
+footer {
+  margin-top: 5rem;
+  padding: 1rem
+}
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+  }
+  li { flex-basis: 25%; list-style-type: none; }
+  img {
+    max-width: 100%;
+  }
+</style>

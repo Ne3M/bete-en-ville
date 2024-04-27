@@ -1,18 +1,24 @@
 ---
 interface Props {
 	name: string;
-	toto: string;
+	img: string;
   linkText?: string;
 	linkUrl?: string;
 }
 
-const { name, toto, linkText, linkUrl } = Astro.props;
+const { name, img, linkText, linkUrl } = Astro.props;
 ---
 
 <section>
   <h2>{name}</h2>
-  <img src="{toto}" alt="{name}">
-  <slot />
-  <a href="{link}" target="_blank" rel="noopener noreferrer">{linkText}</a>
+
+  <img src={img} alt={name} />
+
+  <slot>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor.</slot>
+
+  {linkUrl && linkText &&
+    <a href={linkUrl} target="_blank" rel="noopener noreferrer">{linkText}</a>
+  }
+
 </section>
 
