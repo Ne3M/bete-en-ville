@@ -37,12 +37,15 @@ const { drawings, intro = defaultIntro } = Astro.props;
     }
 
     .bug-drawing {
-        /*display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1rem;*/
         width: 100%;
-        columns: 4;
+        columns: 2;
         column-gap: 1rem;
+        @media (min-width: 768px) {
+            columns: 3;
+        }
+        @media (min-width: 1280px) {
+            columns: 4;
+        }
     }
     figure {
         margin: 0;
@@ -61,11 +64,6 @@ const { drawings, intro = defaultIntro } = Astro.props;
             filter: blur(8px);
         }
 
-
-        //&.portrait { grid-row-end: span 2; }
-        // &.landscape { grid-row-end: span 1; }
-        // &.square { grid-row-end: span 2; }*
-
         figcaption {
             font-style: italic;
             margin-left: 15px;
@@ -79,14 +77,7 @@ const { drawings, intro = defaultIntro } = Astro.props;
             border-radius: 15px;
             object-fit: contain;
             object-fit: cover;
-            aspect-ratio: 1;
             display: block;
-        }
-        &:nth-child(3n+1) {
-            // aspect-ratio: 3/2;
-        }
-        &:nth-child(4n) {
-            // aspect-ratio: 1;
         }
     }
     
