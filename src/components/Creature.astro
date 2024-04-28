@@ -117,11 +117,38 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
             }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .bug-intro {
-                display: block; 
                 &-text {
                     margin-bottom: 2rem;
+                }
+                &-start,
+                &-start-img,
+                &-img,
+                &-text  {
+                    width: 100%;
+                }
+                &-text {
+                    margin-bottom: 0;
+                }
+                &-img {
+                    order: 4;
+                    &:before {
+                        content: "";
+                        left: 5vw;
+                        top: 25px;
+                        bottom: 25px;
+                        width: 80vw;
+                    }
+                    img {
+                    width: 50vw;
+                    height: 62.5vw;
+                    &:last-child {
+                        width: 50vw;
+                        height: 35vw;
+                        margin: -100px 0 0 40vw;
+                    }
+                }
                 }
             }
         }

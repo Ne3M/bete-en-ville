@@ -37,6 +37,9 @@ const { drawings, intro = defaultIntro } = Astro.props;
     }
 
     .bug-drawing {
+        /*display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;*/
         width: 100%;
         columns: 2;
         column-gap: 1rem;
@@ -78,6 +81,12 @@ const { drawings, intro = defaultIntro } = Astro.props;
             object-fit: contain;
             object-fit: cover;
             display: block;
+        }
+        &:nth-child(3n+1) {
+            // aspect-ratio: 3/2;
+        }
+        &:nth-child(4n) {
+            // aspect-ratio: 1;
         }
     }
     
