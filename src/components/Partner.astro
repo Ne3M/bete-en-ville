@@ -14,7 +14,7 @@ const { name, img, linkText, linkUrl, direction = "left" } = Astro.props;
   <h2 class="bug-title">{name}</h2>
 
   <div>
-    <img src={img} alt={name} width="300" height="300" />
+    <img src={img} alt={name} width="300" height="300" class="round-shadow" />
     <p>
       <slot>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor.
@@ -41,8 +41,6 @@ const { name, img, linkText, linkUrl, direction = "left" } = Astro.props;
   }
   img {
     width: 300px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #0003;
     margin-bottom: 2rem;
   }
   a.partner-link {
