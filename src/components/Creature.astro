@@ -6,7 +6,7 @@ interface Props {
     img2: string;
     img3: string;
     quotes: string;
-    direction?: string;
+    direction?: "left"|"right";
 }
 
 const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.props;
@@ -100,21 +100,6 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
         h2 {
             font-size: 3rem;
             margin: 0;
-        }
-        :global(h3.bug-title) {
-            margin: 0;
-            font-size: 2rem;
-            font-style: italic;
-            font-weight: normal;
-            &:after {
-                content:"";
-                display: block;
-                height: 4px;
-                width: 75px;
-                margin-top: .75rem;
-                background: #81c132;
-                margin-bottom: 2rem;
-            }
         }
 
         @media (max-width: 768px) {

@@ -1,15 +1,45 @@
 ---
   interface Props {
 	title: string;
+	direction?: "left"|"right";
 }
 
-const { title } = Astro.props;
+const { title, direction = "left" } = Astro.props;
 ---
 
-<section>
-
-  <h2>{title}</h2>
-  <img src="https://picsum.photos/640/360" alt="">
- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor. Maecenas rhoncus, diam at rhoncus aliquam, metus sem tristique enim, quis auctor odio diam rutrum turpis. Sed eget interdum ante. Morbi luctus nunc condimentum, dignissim turpis vitae, cursus ex. Vestibulum est ex, ultricies at nibh in, mollis cursus tellus. Fusce vel purus ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent convallis tristique elementum. Cras eget suscipit libero. Nulla purus nibh, pharetra vel consectetur et, volutpat a metus. Aliquam id luctus mi, non cursus libero. Vivamus suscipit dignissim lorem sed dictum. </p>
-
+<section class={`project-${direction}`}>
+  <h2 class="bug-title">{title}</h2>
+  <div>
+    <img src="https://picsum.photos/640/375" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor. Maecenas rhoncus, diam at rhoncus aliquam, metus sem tristique enim, quis auctor odio diam rutrum turpis. Sed eget interdum ante. Morbi luctus nunc condimentum, dignissim turpis vitae, cursus ex. Vestibulum est ex, ultricies at nibh in, mollis cursus tellus. Fusce vel purus ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent convallis tristique elementum. Cras eget suscipit libero. Nulla purus nibh, pharetra vel consectetur et, volutpat a metus. Aliquam id luctus mi, non cursus libero. Vivamus suscipit dignissim lorem sed dictum. </p>
+  </div>
 </section>
+
+<style lang="scss">
+  section {
+    margin-bottom: 2rem;
+  }
+  div:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  img {
+    float: left;
+    margin: 0 2rem 1rem 0;
+  }
+  .project-right {
+    img {
+      float: right;
+      margin: 0 0 1rem 2rem;
+    }
+  }
+  @media (max-width: 768px) {
+    div {
+      display: block;
+    }
+    p, img {
+      width: 100%;
+    }
+  }
+</style>

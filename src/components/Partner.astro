@@ -4,21 +4,63 @@ interface Props {
 	img: string;
   linkText?: string;
 	linkUrl?: string;
+  direction?: "left"|"right";
 }
 
-const { name, img, linkText, linkUrl } = Astro.props;
+const { name, img, linkText, linkUrl, direction = "left" } = Astro.props;
 ---
 
-<section>
-  <h2>{name}</h2>
+<section class={`partner-${direction}`}>
+  <h2 class="bug-title">{name}</h2>
 
-  <img src={img} alt={name} />
+  <div>
+    <img src={img} alt={name} width="300" height="300" />
+    <p>
+      <slot>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor.
+      </slot>
+      <br>
+      {linkUrl && linkText &&
+        <a href={linkUrl} target="_blank" rel="noopener noreferrer" class="partner-link">{linkText} &rarr;</a>
+      }
+    </p>
+  </div>
+  
+</section>
 
-  <slot>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor.</slot>
-
-  {linkUrl && linkText &&
-    <a href={linkUrl} target="_blank" rel="noopener noreferrer">{linkText}</a>
+<style lang="scss">
+  section {
+    margin-bottom: 2rem;
+  }
+  div {
+    display: flex;
+    gap: 2rem;
+  }
+  div :global(p) {
+    margin-top: 0;
+  }
+  img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #0003;
+    margin-bottom: 2rem;
+  }
+  a.partner-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #333;
   }
 
-</section>
+  .partner-right {
+    div img {
+      order: 2;
+    }
+    h2 {
+      text-align: right;
+      &:after {
+        margin: .75rem 0 2rem auto;
+      }
+    }
+  }
+</style>
 
