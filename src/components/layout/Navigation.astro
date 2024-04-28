@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <script>
@@ -32,19 +31,23 @@
 
 <style>
     .main-nav {
-        transition: all 0.15s ease-in;
+        transition: all 0.2s ease-in;
         /*transition: max-height 0.1s ease-in;*/
-        margin: 1rem 0;
+        padding: 0 1rem;
+        margin: 0 -1rem;
         text-align: center;
         font-size: 1.25rem;
         line-height: 1.5;
         text-transform: uppercase;
         text-decoration: none;
         color: #fff;
-        transform: scaleY(0);
+        /*transform: scaleY(0);*/
         transform-origin: 0 0;
-        max-height: 0;
         opacity: 0;
+        width: 100%;
+        box-sizing: border-box;
+        position: absolute;
+        pointer-events: none;
     }
     .main-nav ul {
         display: flex;
@@ -78,8 +81,9 @@
     }
 
     :global(.menu-open) .main-nav {
-        transform: scaleY(1);
-        max-height: 50vh;
+        /*transform: scaleY(1);*/
         opacity: 1;
+        padding: 1rem;
+        pointer-events: all;
     }
 </style>

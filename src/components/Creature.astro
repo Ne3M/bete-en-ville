@@ -4,23 +4,127 @@ interface Props {
     latinName: string;
     img: string;
     img2: string;
+    img3: string;
+    quotes: string;
+    direction?: string;
 }
 
-const { title, latinName, img, img2 } = Astro.props;
+const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.props;
 ---
     
-    <section>
+    <section class=`bug-presentation bug-presentation--${direction}`>
         <h2>{title}</h2>
-        <h3>{latinName}</h3>
+        <h3 class="bug-title">{latinName}</h3>
 
-        <img src={img} alt={title} />
-        <img src={img2} alt={title} />
+        <div class="bug-intro">
+            <div class="bug-intro-start">
+                <slot name="bug-intro-start"  />
+            </div>
+            <img src={img3} alt={title} class="bug-intro-start-img" />
+            <div class="bug-intro-img">
+                <img src={img} alt={title} />
+                <img src={img2} alt={title} />
+            </div>
+            <div class="bug-intro-text">
+                <slot />
+            </div>
+        </div>
         
-        <slot />
-       
         
 
-        
+        <slot name="viewer" />
+        <slot name="superpower" />
+        <slot name="drawings" />
+        <slot name="poster" />
+               
     </section>
     
+<style lang="scss">
+    .bug-presentation {
+
+        .bug-intro {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: end;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            &-start {
+                width: calc(70% - 1rem);
+                flex-shrink: 1;
+                align-self: start;
+                :global(p) {
+                    margin: 0;
+                }
+                &-img {
+                    width: 30%;
+                    height: auto;
+                    object-fit: cover;
+                    aspect-ratio: 1;
+                    margin: 0 auto;
+                    align-self: start;
+                }
+            }
+            &-text {
+                width: 50%;
+                margin-bottom: calc(35vw + 2rem);
+            }
+            &-img {
+                position: relative;
+                width: 40vw;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    background: #34647388;
+                    left: 5vw;
+                    top: 5vw;
+                    bottom: 5vw;
+                    width: 30vw;
+                }
+
+                img {
+                    position: relative;
+                    box-shadow: 0 0 40px #0009;
+                    z-index: 1;
+                    object-fit: cover;
+                    width: 30vw;
+                    height: 40vw;
+                    max-width: unset;
+                    &:last-child {
+                        width: 50vw;
+                        height: 35vw;
+                        margin: -100px 0 0 125px;
+                    }
+                }
+            }
+        }
+        h2 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        :global(h3.bug-title) {
+            margin: 0;
+            font-size: 2rem;
+            font-style: italic;
+            font-weight: normal;
+            &:after {
+                content:"";
+                display: block;
+                height: 4px;
+                width: 75px;
+                margin-top: .75rem;
+                background: #81c132;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .bug-intro {
+                display: block; 
+                &-text {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+</style>
     

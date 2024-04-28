@@ -10,14 +10,17 @@ import Viewer from '../components/animal/Viewer.astro';
     <Creature
     title="La coccinelle"
     latinName="Coccinella septempunctata"
-    img="https://picsum.photos/200/200"
-    img2="https://picsum.photos/300/300"
+    img="https://picsum.photos/600/480"
+    img2="https://picsum.photos/900/300"
+    img3="https://picsum.photos/500/300"
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
     >
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, error repudiandae. Exercitationem non vitae ducimus totam reprehenderit, quo sed deserunt explicabo. Commodi, optio. Ab numquam quas blanditiis reprehenderit, illo molestias?
-    </p>
+    <p slot="bug-intro-start">Les coccinelles, également appelées "bêtes à bon Dieu" ou "demoiselles", sont des coléoptères dotés de deux paires d'ailes, avec une variété de plus de 3 000 espèces dans le monde. Leur cycle de vie fascinant commence par la ponte stratégique des œufs près des colonies de pucerons, suivie de l'éclosion des larves qui se nourrissent voracement de ces insectes. Après plusieurs stades de croissance et mues, les larves se métamorphosent en nymphes, puis émergent en tant qu'adultes. Les coccinelles adultes se nourrissent principalement de pucerons mais peuvent également consommer du pollen, du nectar, et d'autres insectes. Elles chassent les pucerons en adoptant des stratégies similaires à celles de leurs proies.</p>
+    <p>Pour survivre, les coccinelles hivernent dans divers abris naturels tels que des tas de feuilles ou des crevasses. Elles jouent un rôle crucial dans les jardins en régulant les populations de pucerons et en contribuant à la pollinisation. Cependant, elles sont confrontées à des défis tels que la concurrence des fourmis et la prédation par d'autres insectes et animaux. Les coccinelles sont menacées par les pesticides et la perte d'habitat due à l'urbanisation. Pour favoriser leur présence, il est recommandé de ne pas éliminer manuellement les pucerons, de fournir des plantes riches en pollen et nectar, de favoriser la diversité végétale, d'aménager des sites d'hivernage, et même de construire des abris spécifiques pour les coccinelles. En agissant ainsi, vous contribuez à maintenir un équilibre écologique favorable à ces précieux insectes bénéfiques.</p>
+    
     
     <Viewer 
+    slot="viewer"
     alt="Astronaut"
     src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"

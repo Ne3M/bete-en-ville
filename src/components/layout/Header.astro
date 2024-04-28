@@ -2,13 +2,13 @@
 import Navigation from './Navigation.astro';
 import headerImg from '../../images/nature.jpg';
 import logo from '../../images/logo.png';
-const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
+const bgUrl =  `url("${headerImg.src}") fixed no-repeat 0 0`;
 ---
 <script>
   const header = document.querySelector("header")
   const observer = new IntersectionObserver( 
     ([e]) => {
-      e.target.classList.toggle("is-pinned", e.intersectionRatio < 1);
+      e.target.classList.toggle("is-pinned", window.scrollY > 0);
     },
     { threshold: [1] }
   );
@@ -29,26 +29,37 @@ const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
         </svg>
     </button>
     <h1><img src={logo.src} alt="Les petites bêtes en ville" /></h1>
-</div>
-<Navigation />
-<div class="header-intro">
-  <strong>Les petites bêtes en ville</strong>
-  <p>A la découverte des insectes qui peuples nos villes {bgUrl}</p>
-</div>
+  </div>
+  <Navigation />
   
 </header>
+<section class="header-intro">
+  <div>
+    <strong>Les petites bêtes en ville</strong>
+    <p>A la découverte des insectes qui peuples nos villes</p>
+  </div>
+</section>
 
 
 <style define:vars={{ bgUrl }}>
   .hidden {display: none;}
   header { 
     position: sticky;
-    top:-1px;
+    z-index: 2;
+    top:0;
     padding: 1rem;
     color: #fff;
     background: var(--bgUrl);
     background-size: cover;
   }
+
+  .header-top,
+  :global(.main-nav),
+  .header-intro {
+    background: var(--bgUrl);
+    background-size: cover;
+  }
+
 
   .header-top {
     display: flex;
@@ -68,8 +79,14 @@ const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
     }
 
 
-
   .header-intro {
+    max-height: 200px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.2s ease-in;
+    color: #fff;
+  }
+  .header-intro div {
     position: relative;
     margin: auto;
     max-height: 200px;
@@ -77,8 +94,6 @@ const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
     background-color: rgba(255,255,255,0.15);
     backdrop-filter: saturate(3);
     padding: 2rem;
-    text-align: center;
-    transition: all 0.2s ease-in
   }
     .is-pinned .header-intro,
     :global(.menu-open) .header-intro {
@@ -86,8 +101,8 @@ const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
       opacity:0;
       padding: 0;
     }
-    .header-intro:before,
-    .header-intro:after {
+    .header-intro div:before,
+    .header-intro div:after {
       content:"";
       width: 50px;
       height: 50px;
@@ -97,7 +112,7 @@ const bgUrl =  `url("${headerImg.src}") no-repeat 0 0`;
       border: 2px #fff solid;
       border-width: 2px 2px 0 0;
     }
-    .header-intro:after {
+    .header-intro div:after {
       border-width: 0 0 2px 2px;
       bottom: .75rem;
       left: .75rem;
