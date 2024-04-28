@@ -47,7 +47,7 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
             flex-wrap: wrap;
             align-items: end;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             &-start {
                 width: calc(70% - 1rem);
                 flex-shrink: 1;
@@ -65,20 +65,20 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                 }
             }
             &-text {
-                width: 50%;
-                margin-bottom: calc(35vw + 2rem);
+                width: calc(50% - .5rem);
+                margin-bottom: calc(500px + 2rem);
             }
             &-img {
                 position: relative;
-                width: 40vw;
+                width: calc(50% - .5rem);
                 &:before {
                     content: "";
                     position: absolute;
                     background: #34647388;
-                    left: 5vw;
-                    top: 5vw;
-                    bottom: 5vw;
-                    width: 30vw;
+                    left: 9%;
+                    top: 10%;
+                    bottom: 10%;
+                    right: 8%;
                 }
 
                 img {
@@ -86,12 +86,12 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                     box-shadow: 0 0 40px #0009;
                     z-index: 1;
                     object-fit: cover;
-                    width: 30vw;
-                    height: 40vw;
+                    width: 80%;
+                    height: 600px;
                     max-width: unset;
                     &:last-child {
-                        width: 50vw;
-                        height: 35vw;
+                        width: 150%;
+                        height: 450px;
                         margin: -100px 0 0 125px;
                     }
                 }
