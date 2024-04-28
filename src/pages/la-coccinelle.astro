@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Creature from '../components/Creature.astro';
 import Viewer from '../components/animal/Viewer.astro';
 import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -43,6 +44,20 @@ import Superpower from '../components/animal/Superpower.astro';
         text:"Les coccinelles survivent à l'hiver en trouvant des abris, assurant leur retour au printemps pour protéger les plantes."
       }}
     />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        "https://picsum.photos/900/600",
+        "https://picsum.photos/600/901",
+        "https://picsum.photos/900/601",
+        "https://picsum.photos/900/602",
+        "https://picsum.photos/600/902",
+        "https://picsum.photos/600/900",
+        "https://picsum.photos/600/600",
+
+        ]}
+    ></Drawings>
     
   </Creature>
   
