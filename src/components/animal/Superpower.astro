@@ -1,9 +1,83 @@
 ---
+type Power = {
+    title: string;
+    text: string;
+};
+
 interface Props {
-    power1: string;
-    power2: string;
-    power3: string;
+    power1: Power;
+    power2: Power;
+    power3: Power;
 }
 
 const { power1, power2, power3 } = Astro.props;
+const powers = [power1, power2, power3]
+
 ---
+
+<section>
+    <h3 class="bug-title">Mes trois super-pouvoirs</h3>
+
+    <div class="bug-powers">
+    {powers.map((power, i) => {
+            return <div class="bug-power">
+                <strong data-counter={i+1}>{power.title}</strong>
+                <p>{power.text}</p>
+            </div>
+        })
+    }
+    </div>
+
+</section>
+
+
+<style lang="scss">
+
+    section {
+        position: relative;
+        padding-bottom: 2rem;
+        &:before{
+            content:"";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: calc(-5% - .5rem);
+            width: 100vw;
+            background-image: url("https://images01.nicepage.com/0d/eb/0deb95780006ded47c0b24ebfd6a09a0.jpeg");
+            background-position: 0 30%;
+            box-shadow: 0 15px 10px #0002;
+        }
+    }
+    .bug-powers {
+        display: flex;
+        gap: 1rem;
+        
+        .bug-power {
+            background: #fff9;
+            padding: 1rem 1rem 2rem;
+            flex: 1 1 33%;
+            box-shadow: 0 15px 17px #0005;
+
+            strong {
+                font-family: serif;
+                font-size: 2rem;
+                line-height: 1.15;
+                margin-bottom: 1rem;
+                display: flex;
+                align-items: center;
+                &:before {
+                    content: attr(data-counter);
+                    font-size: 6rem;
+                    color: #346473;
+                    margin: 0 1rem 0 1rem;
+                    line-height: 1;
+                }
+            }
+            p {
+                margin: 0 1rem;
+            }
+        }
+    }
+
+</style>

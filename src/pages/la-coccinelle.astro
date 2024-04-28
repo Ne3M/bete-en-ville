@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Creature from '../components/Creature.astro';
 import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -25,6 +26,22 @@ import Viewer from '../components/animal/Viewer.astro';
     src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp"
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Prédation des pucerons", 
+        text:"Les coccinelles régulent les pucerons en les dévorant, maintenant l'équilibre dans les jardins."
+      }}
+      power2={{
+        title:"Rôle de pollinisation", 
+        text:"En plus de manger des pucerons, les coccinelles pollinisent les plantes en butinant les fleurs."
+      }}
+      power3={{
+        title:"Capacité de survie", 
+        text:"Les coccinelles survivent à l'hiver en trouvant des abris, assurant leur retour au printemps pour protéger les plantes."
+      }}
     />
     
   </Creature>
