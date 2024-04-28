@@ -23,7 +23,7 @@ const { drawings, intro = defaultIntro } = Astro.props;
             if( i==5 || i==4 ||i==1 ) className = "portrait";
             if( i==6 ) className = "square";
             return <figure class={className}  style={`--bg-image: url('${drawing}')`}>
-                <img src={drawing} alt={`${i+1}`} />
+                <img loading="lazy" src={drawing} alt={`${i+1}`} />
                 <figcaption>Dessin par enfant {i+1}</figcaption>
             </figure>
         })}

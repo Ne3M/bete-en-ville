@@ -121,9 +121,18 @@ const bgUrl =  `url("${headerImg.src}") fixed no-repeat 0 0`;
     }
 
     .header-intro strong {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
     .header-intro p {
+      font-size: 1.25rem;
       font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .header-intro div {
+        width: 100%;
+        margin-top: 0;
+        box-sizing: border-box;
+      }
     }
 </style>
