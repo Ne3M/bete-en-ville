@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Project from '../components/Project.astro';
 import Partner from '../components/Partner.astro';
+
+import Lena from '../images/lena.jpg';
+import Blandine from '../images/blandine.jpg';
 ---
 
 <Layout title="Les petites bêtes en ville">
@@ -30,7 +33,7 @@ C'est ainsi qu'est née l'exposition “les petites bêtes en ville”, d'une co
 		
 		<Partner 
 		name="Blandine Villain #Paillette graphique" 
-		img="https://picsum.photos/301/301"
+		img={Blandine.src}
 		linkText="Le site de Blandine"
 		linkUrl="#">
 		
@@ -43,7 +46,7 @@ C'est ainsi qu'est née l'exposition “les petites bêtes en ville”, d'une co
 	<Partner 
 	direction="right"
 	name="Lena Polin #Scarabète" 
-	img="https://picsum.photos/300/300"
+	img={Lena.src}
 	linkText="Le site de Lena"
 	linkUrl="#">
 

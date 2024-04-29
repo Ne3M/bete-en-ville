@@ -4,6 +4,20 @@ import Creature from '../components/Creature.astro';
 import Viewer from '../components/animal/Viewer.astro';
 import Superpower from '../components/animal/Superpower.astro';
 import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/coccinelle/coccinelle_1.png';
+import BugImage2 from '../images/coccinelle/coccinelle_2.jpg';
+import BugImage3 from '../images/coccinelle/coccinelle_3.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/coccinelle/kids_drawings/coccinelle_celeste.jpg';
+import KidsDrawing2 from '../images/coccinelle/kids_drawings/coccinelle_clemence_1.jpg';
+import KidsDrawing3 from '../images/coccinelle/kids_drawings/coccinelle_clemence_2.jpg';
+import KidsDrawing4 from '../images/coccinelle/kids_drawings/coccinelle_elliot.jpg';
+import KidsDrawing5 from '../images/coccinelle/kids_drawings/coccinelle_Erine.jpg';
+import KidsDrawing6 from '../images/coccinelle/kids_drawings/coccinelle_salsabil.jpg';
+
 ---
 
 <Layout title="La coccinelle">
@@ -12,9 +26,9 @@ import Drawings from '../components/animal/Drawings.astro';
     <Creature
     title="La coccinelle"
     latinName="Coccinella septempunctata"
-    img="https://picsum.photos/600/480"
-    img2="https://picsum.photos/900/300"
-    img3="https://picsum.photos/500/300"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
     quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
     >
     <p slot="bug-intro-start">Les coccinelles, également appelées "bêtes à bon Dieu" ou "demoiselles", sont des coléoptères dotés de deux paires d'ailes, avec une variété de plus de 3 000 espèces dans le monde. Leur cycle de vie fascinant commence par la ponte stratégique des œufs près des colonies de pucerons, suivie de l'éclosion des larves qui se nourrissent voracement de ces insectes. Après plusieurs stades de croissance et mues, les larves se métamorphosent en nymphes, puis émergent en tant qu'adultes. Les coccinelles adultes se nourrissent principalement de pucerons mais peuvent également consommer du pollen, du nectar, et d'autres insectes. Elles chassent les pucerons en adoptant des stratégies similaires à celles de leurs proies.</p>
@@ -23,10 +37,10 @@ import Drawings from '../components/animal/Drawings.astro';
     
     <Viewer 
     slot="viewer"
-    alt="Astronaut"
-    src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb"
+    alt="La coccinelle"
+    src="/cocinnelle.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
-    poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp"
+    poster={Poster.src}
     />
 
     <Superpower
@@ -48,13 +62,12 @@ import Drawings from '../components/animal/Drawings.astro';
     <Drawings
       slot="drawings"
       drawings={[
-        "https://picsum.photos/900/600",
-        "https://picsum.photos/600/600",
-        "https://picsum.photos/600/901",
-        "https://picsum.photos/900/601",
-        "https://picsum.photos/900/602",
-        "https://picsum.photos/600/902",
-        "https://picsum.photos/600/900",
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src,
+        KidsDrawing5.src,
+        KidsDrawing6.src
         ]}
     ></Drawings>
     

@@ -1,5 +1,7 @@
 ---
-  interface Props {
+import IntroImg from '../images/nature_2.jpg';
+
+interface Props {
 	title: string;
 	direction?: "left"|"right";
 }
@@ -10,7 +12,7 @@ const { title, direction = "left" } = Astro.props;
 <section class={`project-${direction}`}>
   <h2 class="bug-title">{title}</h2>
   <div>
-    <img src="https://picsum.photos/640/375" alt="" class="round-shadow">
+    <img loading="lazy" src={IntroImg.src} alt="" class="round-shadow" width="2048" height="1424">
     <div>
       <slot>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eget sem eget nulla laoreet consequat. Maecenas nulla tellus, bibendum ut risus sed, porttitor viverra tortor. Maecenas rhoncus, diam at rhoncus aliquam, metus sem tristique enim, quis auctor odio diam rutrum turpis. Sed eget interdum ante. Morbi luctus nunc condimentum, dignissim turpis vitae, cursus ex. Vestibulum est ex, ultricies at nibh in, mollis cursus tellus. Fusce vel purus ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent convallis tristique elementum. Cras eget suscipit libero. Nulla purus nibh, pharetra vel consectetur et, volutpat a metus. Aliquam id luctus mi, non cursus libero. Vivamus suscipit dignissim lorem sed dictum. 
@@ -29,6 +31,8 @@ const { title, direction = "left" } = Astro.props;
     clear: both;
   }
   img {
+    max-width: 40%;
+    height: auto;
     float: left;
     margin: 0 2rem 1rem 0;
     
@@ -45,6 +49,7 @@ const { title, direction = "left" } = Astro.props;
     }
     p, img {
       width: 100%;
+      max-width: 100%;
     }
   }
 </style>
