@@ -60,5 +60,21 @@ const { name, img, linkText, linkUrl, direction = "left" } = Astro.props;
       }
     }
   }
+
+  @media (max-width: 768px) {
+    div {
+      display: block;
+    }
+    img {
+      width: 60%;
+      height: auto;
+      margin: 1rem 0;
+      display: block;
+      
+    }
+    p {
+      width: 100%;
+    }
+  }
 </style>
 
