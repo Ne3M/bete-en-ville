@@ -20,10 +20,10 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
             <div class="bug-intro-start">
                 <slot name="bug-intro-start"  />
             </div>
-            <img loading="lazy" src={img3} alt={title} class="bug-intro-start-img" />
+            <img loading="lazy" src={img3} alt={title} class="bug-intro-start-img round-shadow" />
             <div class="bug-intro-img">
-                <img loading="lazy" src={img} alt={title} />
-                <img loading="lazy" src={img2} alt={title} />
+                <img loading="lazy" src={img} alt={title} class="round-shadow" />
+                <img loading="lazy" src={img2} alt={title} class="round-shadow" />
             </div>
             <div class="bug-intro-text">
                 <slot />

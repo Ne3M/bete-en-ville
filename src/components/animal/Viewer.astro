@@ -22,6 +22,11 @@ const { alt, src, environmentImg, poster } = Astro.props;
         poster={poster}
         shadow-intensity="1" 
         camera-controls 
+        autoplay 
+        shadow-intensity="5"
+        exposure="1.5"
+        shadow-softness="0.9"
+        ar ar-modes="scene-viewer webxr quick-look"
         touch-action="pan-y">
     </model-viewer>
     </div>
