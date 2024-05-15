@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/gendarme/gendarme_1.jpg';
+import BugImage2 from '../images/gendarme/gendarme_3.jpg';
+import BugImage3 from '../images/gendarme/gendarme_2.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/gendarme/kids_drawings/gendarme_1_ hakim.jpg';
+import KidsDrawing2 from '../images/gendarme/kids_drawings/gendarme_2_angélique.jpg';
+import KidsDrawing3 from '../images/gendarme/kids_drawings/gendarme_3.jpg';
+import KidsDrawing4 from '../images/gendarme/kids_drawings/gendarme_4_Nathan.jpg';
+
+---
+
+<Layout title="Le gendarme">
+  <main>
+    
+    <Creature
+    title="Le gendarme"
+    latinName="Pyrrhocoris apterus"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="son apparence rouge et noir envoie le message a ses potentiels prédateurs : je suis venimeux"
+    >
+    <p slot="bug-intro-start">Le gendarme, est un insecte hétéroptère reconnaissable à sa carapace rouge et noire, souvent vu en groupes importants. Malgré les préoccupations parfois associées à sa présence, le gendarme est totalement inoffensif pour les plantes et les humains, ne causant aucun dégât et ne piquant pas. Il se nourrit principalement de plantes telles que les Malvacées et les Tiliacées, en particulier de leurs fruits et graines, mais peut également consommer des insectes vivants ou morts et des œufs d'insectes. En tant qu'insecte auxiliaire, le gendarme est bénéfique au jardin en aidant à contrôler les populations d'insectes nuisibles comme les pucerons.</p>
+    <p>Son cycle de vie comprend des accouplements visibles au printemps, suivis par la ponte d'une cinquantaine d'œufs. Les larves, qui passent par cinq stades de développement, évoluent pour devenir des jeunes adultes qui hibernent pendant l'hiver. Cette espèce présente une grande résilience face aux variations climatiques et contribue à la biodiversité des écosystèmes agricoles et naturels grâce à ses interactions avec d'autres organismes.</p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="Le gendarme"
+    src="/gendarme.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Contrôle des insectes nuisibles ", 
+        text:"Le gendarme mange des pucerons pour aider à contrôler les ravageurs dans les jardins, c'est un allié précieux des jardiniers."
+      }}
+      power2={{
+        title:"Résistant aux variations climatiques", 
+        text:"Il s'adapte à divers climats, reste actif de mars à novembre et hiverne pour survivre au froid."
+      }}
+      power3={{
+        title:"Contribu à la biodiversité", 
+        text:"En tant qu'insecte prédateur et pollinisateur, il joue un rôle essentiel dans les écosystèmes agricoles et naturels"
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src,
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
