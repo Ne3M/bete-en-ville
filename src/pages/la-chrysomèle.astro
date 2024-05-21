@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/chrysomele/chrysomele_1.jpg';
+import BugImage2 from '../images/chrysomele/chrysomele_2.jpg';
+import BugImage3 from '../images/chrysomele/chrysomele_3.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/chrysomele/kids_drawings/chrysomele_1_Sami.jpg';
+import KidsDrawing2 from '../images/chrysomele/kids_drawings/chrysomele_2_manel.jpg';
+import KidsDrawing3 from '../images/chrysomele/kids_drawings/chrysomele_3 Maryse.jpg';
+import KidsDrawing4 from '../images/chrysomele/kids_drawings/chrysomele_4_Pauline.jpg';
+
+---
+
+<Layout title="La chrysomèle">
+  <main>
+    
+    <Creature
+    title="La chrysomèle"
+    latinName="Chrysomelidae"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
+    >
+    <p slot="bug-intro-start">Les chrysomèles, ou coléoptères des feuilles, appartiennent à la famille des Chrysomelidae et comptent plus de 35 000 espèces dans le monde. Ces insectes, mesurant entre 1,5 et 18 mm, se distinguent par leurs couleurs vives. Principalement phytophages, ils se nourrissent de feuilles, fleurs, graines et racines. Parmi les espèces notables, on trouve la Chrysomèle du maïs, la Chrysomèle de la pomme de terre et la Chrysomèle de la moutarde. 
+    <br>Les femelles pondent leurs œufs en petits groupes sur les plantes hôtes, et les larves se nourrissent intensivement des feuilles, causant des dégâts aux cultures. Après plusieurs mues, les larves se nymphosent et les adultes émergent pour recommencer le cycle.</p>
+    <p>Les chrysomèles ont un cycle de vie variable, certaines espèces ayant plusieurs générations par an, tandis que d'autres n'en ont qu'une seule. Elles peuvent être trouvées dans divers habitats, y compris les forêts, prairies, champs cultivés et jardins domestiques.
+    <br>Ces insectes, bien que petits, jouent un rôle significatif dans les écosystèmes. Ils participent à la décomposition des matières végétales et servent de proies pour de nombreux prédateurs, contribuant ainsi à la biodiversité. Cependant, certaines espèces sont considérées comme des ravageurs majeurs en agriculture en raison des dommages qu'elles causent aux cultures de grande importance économique.</p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="La chrysomele"
+    src="/cocinnelle.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Adaptabilité alimentaire", 
+        text:" Elles se nourrissent d'une large variété de plantes, ce qui leur permet de coloniser de nombreux types d'habitats."
+      }}
+      power2={{
+        title:"Cycle de vie rapide", 
+        text:"Elles peuvent avoir plusieurs générations par an, ce qui leur permet de se multiplier rapidement dans des conditions favorables."
+      }}
+      power3={{
+        title:"Rôle écologique", 
+        text:"Elles jouent un rôle crucial dans les écosystèmes en contribuant à la décomposition des plantes"
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

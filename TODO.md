@@ -6,3 +6,4 @@
 - Faire un coposant poster pour les affiches
 - Changer les logos footer
 - Changer les noms sur les dessins
+- mettre citation libellule chrysomele
