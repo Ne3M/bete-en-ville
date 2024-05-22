@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/abeille/abeille_1.jpg';
+import BugImage2 from '../images/abeille/abeille_2.jpg';
+import BugImage3 from '../images/abeille/abeille_3.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/abeille/kids_drawings/abeille_1_Océane.jpg';
+import KidsDrawing2 from '../images/abeille/kids_drawings/abeille_2_Inaya.jpg';
+import KidsDrawing3 from '../images/abeille/kids_drawings/abeille_3_Joseph.jpg';
+import KidsDrawing4 from '../images/abeille/kids_drawings/abeille_4_naila.jpg';
+
+
+---
+
+<Layout title="L'abeille'">
+  <main>
+    
+    <Creature
+    title="L'abeille'"
+    latinName="Anthophila"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
+    >
+    <p slot="bug-intro-start">Les abeilles sont des insectes fascinants et essentiels à notre écosystème, appartenant à l'ordre des hyménoptères. Elles sont connues pour leur rôle crucial dans la pollinisation des plantes à fleurs. Parmi les milliers d'espèces, l'abeille domestique (Apis mellifera) est la plus célèbre, notamment pour sa production de miel. Elles jouent un rôle fondamental dans la biodiversité et les chaînes alimentaires.
+    <br>Les abeilles vivent en colonies complexes organisées autour d'une reine, unique reproductrice. Les ouvrières, femelles stériles, s'occupent de la collecte de nectar et de pollen, de la protection de la ruche, et de l'entretien des larves. Les mâles, ou faux-bourdons, ont pour seule mission de féconder une reine vierge. Cette organisation sociale sophistiquée permet à la colonie de fonctionner efficacement.
+    </p>
+    <p>La communication entre les abeilles est fascinante. Elles utilisent des phéromones pour transmettre des messages chimiques et pratiquent la "danse frétillante" pour indiquer la direction et la distance des sources de nourriture. Cette danse montre leur capacité avancée de communication et de collaboration. Les ruches peuvent contenir des milliers d'abeilles, chaque membre jouant un rôle crucial pour la colonie.
+    <br>En plus de leur rôle écologique, les abeilles produisent de la cire d'abeille, utilisée pour construire les alvéoles hexagonales de la ruche. Leur capacité à produire des substances médicinales et nutritives, comme le miel, souligne leur importance pour les écosystèmes et les humains. La préservation des abeilles est donc essentielle pour l'environnement, l'agriculture et la santé humaine.
+    </p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="L'abeille'"
+    src="/cocinnelle.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Pollinisatrice", 
+        text:"Elle collecte du nectar et du pollen des fleurs, facilitant ainsi la reproduction des plantes."
+      }}
+      power2={{
+        title:"Productrice de miel", 
+        text:"Aliment délicieux pour les humains, il a aussi des propriétés médicinales et est un conservatrices naturelles."
+      }}
+      power3={{
+        title:"Structure sociale sophistiquée", 
+        text:"Collecte la nouriture, protege la colonie et prend soin des jeunes grêce a une organisation efficace."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
