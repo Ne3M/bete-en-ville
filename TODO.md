@@ -8,3 +8,4 @@
 - Changer les noms sur les dessins
 - mettre citation libellule chrysomele
 - Optimiser les images
+- Corriger la phrase sous le titre "peuplent"
