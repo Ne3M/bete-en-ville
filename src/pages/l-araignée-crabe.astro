@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/araignee-crabe/araignee-crabe_1.jpg';
+import BugImage2 from '../images/araignee-crabe/araignee-crabe_2.jpg';
+import BugImage3 from '../images/araignee-crabe/araignee-crabe_3.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/araignee-crabe/kids_drawings/araignee-crabe_1_soulaiman.jpg';
+import KidsDrawing2 from '../images/araignee-crabe/kids_drawings/araignee-crabe_2_luana.jpg';
+import KidsDrawing3 from '../images/araignee-crabe/kids_drawings/araignee-crabe_3_Aïcha.jpg';
+import KidsDrawing4 from '../images/araignee-crabe/kids_drawings/araignee-crabe_4_khellya.jpg';
+import KidsDrawing5 from '../images/araignee-crabe/kids_drawings/araignee-crabe_5_Mariam.jpg';
+import KidsDrawing6 from '../images/araignee-crabe/kids_drawings/araignee-crabe-6.jpg';
+
+---
+
+<Layout title="L'araignée crabe">
+  <main>
+    
+    <Creature
+    title="L'araignée crabe"
+    latinName="Thomisidae"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
+    >
+    <p slot="bug-intro-start">L'araignée-crabe, également connue sous le nom de thomise, appartient à la famille des Thomisidae. Elle se distingue par sa capacité unique à se déplacer latéralement, à la manière d'un crabe, d'où elle tire son nom. Les araignées-crabes sont souvent de petite taille, avec des corps robustes et des pattes antérieures plus longues, ce qui leur permet de saisir leurs proies avec précision. Elles sont largement répandues dans le monde entier, principalement dans les régions tempérées et tropicales.
+    <br>Les araignées-crabes sont des maîtres du camouflage. Contrairement à de nombreuses autres araignées, elles ne tissent pas de toiles pour capturer leurs proies. Au lieu de cela, elles se fondent dans leur environnement, utilisant leur capacité à changer de couleur pour se dissimuler sur les fleurs et les feuilles. Cette technique leur permet de surprendre les insectes pollinisateurs tels que les abeilles et les papillons, qu'elles saisissent avec leurs puissantes pattes avant.
+    </p>
+    <p>La morphologie de l'araignée-crabe est parfaitement adaptée à son mode de vie prédateur. Ses pattes avant sont puissantes et capables de s'étendre largement, lui permettant de saisir et d'immobiliser des proies plus grandes qu'elle. Ses pattes arrière, plus courtes, sont utilisées pour ancrer solidement son corps à la surface sur laquelle elle se trouve, offrant ainsi une stabilité optimale lors de l'attaque.
+    <br>Les araignées-crabes possèdent également une vision exceptionnelle. Elles ont huit yeux, disposés de manière à leur offrir une vue panoramique et une perception précise des mouvements autour d'elles. Cette vision leur permet de détecter rapidement les proies et les prédateurs potentiels, augmentant ainsi leurs chances de survie.
+    </p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="L'araignée crabe"
+    src="/cocinnelle.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Camouflage adaptatif", 
+        text:"Elle peut changer de couleur pour se fondre dans son environnement, devenant presque invisible."
+      }}
+      power2={{
+        title:"Prédation efficace", 
+        text:"Ses puissantes et longues pattes avant lui permettent de capturer des proies rapidement et efficacement."
+      }}
+      power3={{
+        title:"Vision panoramique", 
+        text:"AAvec ses huit yeux, l'araignée-crabe a une vue étendue, repérant proies et évitant dangers."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src,
+        KidsDrawing5.src,
+        KidsDrawing6.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
