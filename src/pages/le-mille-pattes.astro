@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/mille-pattes/mille-pattes_3.jpg';
+import BugImage2 from '../images/mille-pattes/mille-pattes_2.jpg';
+import BugImage3 from '../images/mille-pattes/mille-pattes_1.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/mille-pattes/kids_drawings/mille-pattes_1.jpg';
+import KidsDrawing2 from '../images/mille-pattes/kids_drawings/mille-pattes_2_Charlie.jpg';
+import KidsDrawing3 from '../images/mille-pattes/kids_drawings/mille-pattes_3_Agathe.jpg';
+import KidsDrawing4 from '../images/mille-pattes/kids_drawings/mille-pattes_4_Juliette.jpg';
+import KidsDrawing5 from '../images/mille-pattes/kids_drawings/mille-pattes_5_Éloïse.jpg';
+import KidsDrawing6 from '../images/mille-pattes/kids_drawings/mille-pattes_6_romain.jpg';
+
+---
+
+<Layout title="Le mille-pattes">
+  <main>
+    
+    <Creature
+    title="Le mille-pattes"
+    latinName=" Diplopoda"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
+    >
+    <p slot="bug-intro-start">Le mille-pattes, ou myriapode, est un arthropode au corps allongé et segmenté, avec des paires de pattes sur chaque segment. Contrairement à son nom, il n'a pas mille pattes, mais varie de quelques dizaines à plusieurs centaines. Répartis mondialement, ils vivent surtout dans les sols humides, les litières de feuilles et les sous-bois. Principalement détritivores, ils se nourrissent de matière organique en décomposition, bien que certaines espèces soient carnivores ou herbivores. Leur rôle est crucial dans l'écosystème, car ils décomposent la matière organique, enrichissent le sol et facilitent le recyclage des nutriments.
+    </p>
+    <p>Morphologiquement, les mille-pattes ont un corps divisé en deux parties principales : la tête et le tronc segmenté. La tête est munie d'antennes, de mandibules et de maxilles, aidant à détecter les aliments et à se déplacer. Le tronc comporte des segments, chacun portant une ou deux paires de pattes, permettant une mobilité efficace dans des environnements complexes.
+    <br>Les mille-pattes possèdent diverses défenses contre les prédateurs. Beaucoup d'espèces sécrètent des substances chimiques toxiques ou malodorantes pour les dissuader. Les mille-pattes géants peuvent aussi s'enrouler en spirale, exposant une armure dure et dissuasive. Ces adaptations les aident à survivre malgré la prédation fréquente.
+    </p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="LE mille-pattes"
+    src="/cocinnelle.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Adaptabilité environnementale", 
+        text:"Les mille-pattes survivent dans divers habitats, des forêts tropicales aux déserts, grâce à leur adaptabilité."
+      }}
+      power2={{
+        title:"Défenses chimiques", 
+        text:"De nombreuses espèces de mille-pattes produisent des substances toxiques ou répulsives, augmentant leurs chances de survie."
+      }}
+      power3={{
+        title:"Rôle écologique", 
+        text:"En tant que détritivores, les mille-pattes décomposent la matière organique, enrichissant le sol et maintenant les écosystèmes."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src,
+        KidsDrawing5.src,
+        KidsDrawing6.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
