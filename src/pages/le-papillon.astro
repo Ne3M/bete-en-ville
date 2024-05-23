@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/papillon/papillon_3.jpg';
+import BugImage2 from '../images/papillon/papillon_2.jpg';
+import BugImage3 from '../images/papillon/papillon_1.jpg';
+import Poster from '../images/coccinelle/coccinelle_3d_preview.png';
+
+import KidsDrawing1 from '../images/papillon/kids_drawings/papillon_1_Ines.jpg';
+import KidsDrawing2 from '../images/papillon/kids_drawings/papillon_2_Anaïs.jpg';
+import KidsDrawing3 from '../images/papillon/kids_drawings/papillon_3_Soline.jpg';
+import KidsDrawing4 from '../images/papillon/kids_drawings/papillon_4_Hanaé..jpg';
+---
+
+<Layout title="Le papillon Vulcain">
+  <main>
+    
+    <Creature
+    title="Le papillon Vulcain"
+    latinName="Vanessa atalanta"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les points sur leur dos révèlent leur espèce, pas leur age"
+    >
+    <p slot="bug-intro-start">Le papillon Vulcain, ou Vanessa atalanta, est une espèce emblématique de la famille des Nymphalidae. Reconnaissable par ses ailes noires bordées de bandes rouges et blanches, il est largement répandu dans les régions tempérées d'Europe, d'Asie et d'Amérique du Nord. Ce papillon tire son nom de Vulcain, le dieu romain du feu, en raison de la couleur rouge vif de ses ailes.
+    <br>Le papillon Vulcain est connu pour sa capacité à migrer sur de longues distances. Chaque année, des milliers de ces papillons entreprennent un voyage migratoire impressionnant, parcourant des centaines, voire des milliers de kilomètres, du nord de l'Europe vers le sud de l'Europe et de l'Afrique du Nord pour échapper aux rigueurs de l'hiver. Cette migration spectaculaire en fait l'une des espèces de papillons les plus étudiées et admirées.
+    </p>
+    <p>Le cycle de vie du papillon Vulcain commence par la ponte d'œufs par la femelle sur des plantes hôtes telles que l'ortie. Les chenilles éclosent des œufs et se nourrissent de feuilles jusqu'à ce qu'elles se transforment en chrysalides. Après une période de métamorphose, les adultes émergent et commencent leur quête de nourriture et de partenaires.
+    <br>Morphologiquement, le papillon Vulcain présente une grande envergure et une silhouette élégante. Ses ailes sont ornées de motifs délicats et ses antennes sont fines et courbées. Ces papillons sont souvent observés se nourrissant de nectar dans les jardins, les prairies et les zones boisées, contribuant ainsi à la pollinisation des plantes.
+    </p>
+    
+    
+    <Viewer 
+    slot="viewer"
+    alt="Le papillon"
+    src="/cocinnelle.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    />
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Capacité migratoire", 
+        text:"Le papillon Vulcain, migrant sur de longues distances, soutient les populations dans des habitats favorables."
+      }}
+      power2={{
+        title:"Rôle de pollinisation", 
+        text:"Le papillon Vulcain, en se nourrissant de nectar, favorise la pollinisation des plantes et la biodiversité."
+      }}
+      power3={{
+        title:"S'adapte a son environnement", 
+        text:"Le papillon Vulcain s'adapte à divers habitats, des zones urbaines aux régions boisées, face aux changements environnementaux."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src
+
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
