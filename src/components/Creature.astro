@@ -21,6 +21,11 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                 <slot name="bug-intro-start"  />
             </div>
             <img loading="lazy" src={img3} alt={title} class="bug-intro-start-img round-shadow" />
+
+            <blockquote class="bug-intro-quote">
+                <span>{quotes}</span>
+            </blockquote>
+
             <div class="bug-intro-img">
                 <img loading="lazy" src={img} alt={title} class="round-shadow" />
                 <img loading="lazy" src={img2} alt={title} class="round-shadow" />
@@ -62,6 +67,29 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                     aspect-ratio: 1;
                     margin: 0 auto;
                     align-self: start;
+                }
+            }
+
+            &-quote {
+                width: 100%;
+                position: relative;
+                font-family: serif;
+                font-style: italic;
+                font-size: 2rem;
+                margin: 4rem 2rem 2rem;
+                span {
+                    position: relative;
+                }
+                &:before {
+                    content: "“";
+                    display: inline-block;
+                    font-size: 5rem;
+                    line-height: 2rem;
+                    color: #ccc;
+                    transform: scale(5);
+                    transform-origin: 60% -20%;
+                    position: absolute;
+
                 }
             }
             &-text {
@@ -112,6 +140,9 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                 &-img,
                 &-text  {
                     width: 100%;
+                }
+                &-quote {
+                    margin-bottom: 0;
                 }
                 &-text {
                     margin-bottom: 0;
