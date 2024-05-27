@@ -4,9 +4,10 @@ interface Props {
     src: string;
     environmentImg: string;
     poster: string;
+    shadow?: string;
 }
 
-const { alt, src, environmentImg, poster } = Astro.props;
+const { alt, src, environmentImg, poster, shadow = 3 } = Astro.props;
 ---
 
 <section>
@@ -23,7 +24,7 @@ const { alt, src, environmentImg, poster } = Astro.props;
         shadow-intensity="1" 
         camera-controls 
         autoplay 
-        shadow-intensity="5"
+        shadow-intensity={shadow}
         exposure="1.5"
         shadow-softness="0.9"
         ar ar-modes="scene-viewer webxr quick-look"
