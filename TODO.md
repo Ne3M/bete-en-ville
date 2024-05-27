@@ -1,10 +1,5 @@
 # Todo List
 
-- Ajouter les citation
-- Ajouter le poster gendarme, libellule,
-- ajouter glb libellule
-- Faire un coposant poster pour les affiches
-- Changer les logos footer
-- Changer les noms sur les dessins
-- mettre citation libellule chrysomele
-- Optimiser les images
+- **Ajouter les citations**
+- ajouter glb
+- Faire un composant poster pour les affiches

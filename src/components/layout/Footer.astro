@@ -1,15 +1,19 @@
 ---
+import logoVille from '../../images/logo_ville.jpg';
+import logoContratVille from '../../images/logo_cv.png';
+import logoFDH from '../../images/logo_fdh.jpg';
+import logoVilleNouriciere from '../../images/logo_villenn.png';
 ---
 <style>
   footer { color: white; background: #13151a; }
   
 </style>
 <footer>
-
 <ul>
-  <li> <img loading="lazy" src="https://lafermedenhaut.villeneuvedascq.fr/themes/custom/ferme_d_en_haut/fermedenhaut.jpg" alt="la ferme d'en haut">
-  <li> <img loading="lazy" src="https://www.villeneuvedascq.fr/themes/custom/spe/images/vasqc-logo.png" alt="Villeneuve d'ascq">
-  <li>  <img loading="lazy" src="https://www.lillemetropole.fr/sites/default/files/logo-mel_0.jpg" alt="MEL">
+  <li> <img loading="lazy" src={logoFDH.src} alt="la ferme d'en haut">
+  <li> <img loading="lazy" src={logoVille.src} alt="Villeneuve d'ascq">
+  <li> <img loading="lazy" src={logoVilleNouriciere.src} alt="Villeneuve d'ascq, ville nouricière">
+  <li> <img loading="lazy" src={logoContratVille.src} alt="MEL">
 </ul>
 
 </footer>
@@ -23,7 +27,8 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    width: 90%;
+    max-width: min(calc(100% - 2rem), 1280px);
     margin: 0 auto;
   }
   li { flex-basis: 25%; list-style-type: none;  text-align: center;}

@@ -41,7 +41,7 @@ const bgUrl =  `url("${headerImg.src}") fixed no-repeat 0 0`;
 </section>
 
 
-<style define:vars={{ bgUrl }}>
+<style lang="scss" define:vars={{ bgUrl }}>
   .hidden {display: none;}
   header { 
     position: sticky;
@@ -65,17 +65,21 @@ const bgUrl =  `url("${headerImg.src}") fixed no-repeat 0 0`;
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
+
+    .nav-btn svg {
+      fill: yellow;
+    }
+    }
    
     h1 {
       margin: 0;
     }
     h1 img {
       width: 80px;
-      filter: drop-shadow(2px 0px 0 white) 
+     /* filter: drop-shadow(2px 0px 0 white) 
       drop-shadow(0 -2px 0 white) 
       drop-shadow(0 2px 0 white) 
-      drop-shadow(-2px 0 0 white);
+      drop-shadow(-2px 0 0 white);*/
     }
 
 
@@ -109,7 +113,7 @@ const bgUrl =  `url("${headerImg.src}") fixed no-repeat 0 0`;
       position: absolute;
       top: .75rem;
       right: .75rem;
-      border: 2px #fff solid;
+      border: 2px yellow solid;
       border-width: 2px 2px 0 0;
     }
     .header-intro div:after {
