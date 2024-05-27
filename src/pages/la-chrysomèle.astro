@@ -16,13 +16,14 @@ import KidsDrawing2 from '../images/chrysomele/kids_drawings/chrysomele_2_Manel.
 import KidsDrawing3 from '../images/chrysomele/kids_drawings/chrysomele_3 Maryse.jpg';
 import KidsDrawing4 from '../images/chrysomele/kids_drawings/chrysomele_4_Pauline.jpg';
 
+const title="La chrysomèle"
 ---
 
-<Layout title="La chrysomèle">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="La chrysomèle"
+    title={title}
     latinName="Chrysomelidae"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -37,7 +38,7 @@ import KidsDrawing4 from '../images/chrysomele/kids_drawings/chrysomele_4_Paulin
     
     <Viewer 
     slot="viewer"
-    alt="La chrysomele"
+    alt={title}
     src="/chrysomele.gltf"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}
@@ -70,6 +71,7 @@ import KidsDrawing4 from '../images/chrysomele/kids_drawings/chrysomele_4_Paulin
     ></Drawings>
     
   </Creature>
+
   
   
   

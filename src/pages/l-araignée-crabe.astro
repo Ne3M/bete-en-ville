@@ -18,13 +18,14 @@ import KidsDrawing4 from '../images/araignee-crabe/kids_drawings/araignee-crabe_
 import KidsDrawing5 from '../images/araignee-crabe/kids_drawings/araignee-crabe_5_Mariam.jpg';
 import KidsDrawing6 from '../images/araignee-crabe/kids_drawings/araignee-crabe-6_Thomas.jpg';
 
+const title="L'araignée crabe"
 ---
 
-<Layout title="L'araignée crabe">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="L'araignée crabe"
+    title={title}
     latinName="Thomisidae"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -41,7 +42,7 @@ import KidsDrawing6 from '../images/araignee-crabe/kids_drawings/araignee-crabe-
     
     <Viewer 
     slot="viewer"
-    alt="L'araignée crabe"
+    alt={title}
     src="/araignee_crabe.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}

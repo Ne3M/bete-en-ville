@@ -18,13 +18,14 @@ import KidsDrawing4 from '../images/coccinelle/kids_drawings/coccinelle_Elliot.j
 import KidsDrawing5 from '../images/coccinelle/kids_drawings/coccinelle_Erine.jpg';
 import KidsDrawing6 from '../images/coccinelle/kids_drawings/coccinelle_Salsabil.jpg';
 
+const title="La coccinelle"
 ---
 
-<Layout title="La coccinelle">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="La coccinelle"
+    title={title}
     latinName="Coccinella septempunctata"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -37,7 +38,7 @@ import KidsDrawing6 from '../images/coccinelle/kids_drawings/coccinelle_Salsabil
     
     <Viewer 
     slot="viewer"
-    alt="La coccinelle"
+    alt={title}
     src="/cocinnelle.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}

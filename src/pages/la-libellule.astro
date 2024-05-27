@@ -18,13 +18,14 @@ import KidsDrawing4 from '../images/libellule/kids_drawings/Libellule_4_Baràa.j
 import KidsDrawing5 from '../images/libellule/kids_drawings/Libellule_5_Morgann.jpg';
 import KidsDrawing6 from '../images/libellule/kids_drawings/Libellule_6_Catherine.jpg';
 
+const title="La libellule"
 ---
 
-<Layout title="La libellule">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="La libellule"
+    title={title}
     latinName="Aeshna cyanea"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -40,7 +41,7 @@ import KidsDrawing6 from '../images/libellule/kids_drawings/Libellule_6_Catherin
     
     <Viewer 
     slot="viewer"
-    alt="La libellule"
+    alt={title}
     src="/libellule.gltf"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}

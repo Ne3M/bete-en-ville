@@ -1,0 +1,90 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+const bug_pages = [
+    {
+        name:"Le papillon Vulcain",
+        url:"/le-papillon"
+    },
+    {
+        name:"La chrysomèle",
+        url:"/la-chrysomèle"
+    },
+    {
+        name:"L'abeille solitaire",
+        url:"/l-abeille"
+    },
+    {
+        name:"L'araignée crabe",
+        url:"/l-araignée-crabe"
+    },
+    {
+        name:"La libellule",
+        url:"/la-libellule"
+    },
+    {
+        name:"Le gendarme",
+        url:"/le-gendarme"
+    },
+    {
+        name:"Le mille-pattes",
+        url:"/le-mille-pattes"
+    },
+    {
+        name:"La coccinelle",
+        url:"/la-coccinelle"
+    },
+]
+
+const currentPage = bug_pages.findIndex(bug => bug.name === title)
+const prevPage = (currentPage === 0) ? bug_pages.length-1 : currentPage-1
+const nextPage = (currentPage === bug_pages.length-1) ? 0 : currentPage+1
+
+---
+
+<aside>
+    <strong class="bug-title">Découvrez les autres insectes</strong>
+    <a href={bug_pages[prevPage].url}>
+        <span class="bug-arrow">◀</span> {bug_pages[prevPage].name}
+    </a>
+    <a href={bug_pages[nextPage].url}>
+        {bug_pages[nextPage].name} <span class="bug-arrow">▶</span>
+    </a>
+</aside>
+
+<style lang="scss">
+    aside {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        strong {
+            width: 100%;
+        }
+        a {
+            color: #000;
+            display: inline-block;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            
+            text-decoration: none;
+            background: #ff0;
+
+            background: #fff;
+            border: 3px #000 solid;
+            box-shadow: 3px 3px 0 yellow, 3px 3px 0 inset yellow;
+            transition: all 0.3s;
+
+            &:hover {
+                border: 3px yellow solid;
+                box-shadow: 2px 2px 0 #000;
+                text-decoration: underline;
+            }
+        }
+        .bug-arrow {
+        }
+    }
+</style>

@@ -1,4 +1,6 @@
 ---
+import PrevNext from '../components/layout/prev_next.astro';
+
 interface Props {
     title: string;
     latinName: string;
@@ -41,6 +43,8 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
         <slot name="superpower" />
         <slot name="drawings" />
         <slot name="poster" />
+        
+        <PrevNext title={title} />
                
     </section>
     

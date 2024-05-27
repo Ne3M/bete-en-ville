@@ -16,14 +16,14 @@ import KidsDrawing2 from '../images/abeille/kids_drawings/abeille_2_Inaya.jpg';
 import KidsDrawing3 from '../images/abeille/kids_drawings/abeille_3_Joseph.jpg';
 import KidsDrawing4 from '../images/abeille/kids_drawings/abeille_4_Naila.jpg';
 
-
+const title="L'abeille solitaire"
 ---
 
-<Layout title="L'abeille solitaire'">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="L'abeille solitaire"
+    title={title}
     latinName="Andrena"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -40,7 +40,7 @@ import KidsDrawing4 from '../images/abeille/kids_drawings/abeille_4_Naila.jpg';
     
     <Viewer 
     slot="viewer"
-    alt="L'abeille"
+    alt={title}
     src="/abeille.glb"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}

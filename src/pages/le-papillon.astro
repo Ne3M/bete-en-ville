@@ -15,13 +15,15 @@ import KidsDrawing1 from '../images/papillon/kids_drawings/papillon_1_Ines.jpg';
 import KidsDrawing2 from '../images/papillon/kids_drawings/papillon_2_Anaïs.jpg';
 import KidsDrawing3 from '../images/papillon/kids_drawings/papillon_3_Soline.jpg';
 import KidsDrawing4 from '../images/papillon/kids_drawings/papillon_4_Hanaé.jpg';
+
+const title="Le papillon Vulcain"
 ---
 
-<Layout title="Le papillon Vulcain">
+<Layout title={title}>
   <main>
     
     <Creature
-    title="Le papillon Vulcain"
+    title={title}
     latinName="Vanessa atalanta"
     img={BugImage1.src}
     img2={BugImage2.src}
@@ -38,7 +40,7 @@ import KidsDrawing4 from '../images/papillon/kids_drawings/papillon_4_Hanaé.jpg
     
     <Viewer 
     slot="viewer"
-    alt="Le papillon"
+    alt={title}
     src="/vanessa.gltf"
     environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
     poster={Poster.src}
