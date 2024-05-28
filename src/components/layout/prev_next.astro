@@ -87,4 +87,18 @@ const nextPage = (currentPage === bug_pages.length-1) ? 0 : currentPage+1
         .bug-arrow {
         }
     }
+
+    @media (max-width: 768px) {
+        aside {
+            display: block;
+            a {
+                box-sizing: border-box;
+                width: 100%;
+                margin-bottom: 1rem;
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
 </style>
