@@ -5,13 +5,14 @@ import Partner from '../components/Partner.astro';
 
 import Lena from '../images/lena.jpg';
 import Blandine from '../images/blandine.jpg';
+import IntroImg from '../images/nature_2.jpg';
 ---
 
 <Layout title="Les petites bêtes en ville">
 	<main>
 		
 
-		<Project title="Bienvenue !">
+		<Project title="Bienvenue !" imgUrl={IntroImg.src}>
 <p>
 	Plongez au cœur de la biodiversité urbaine avec <strong>"Les Petites Bêtes en Ville"</strong> , <strong>une exposition immersive</strong>  et <strong>une balade captivante</strong>  entre les quartiers Flers Bourg et Pont de Bois à Villeneuve d'Ascq. 
 <br>Découvrez un monde fascinant où la nature s'épanouit au milieu du béton, et laissez-vous surprendre par la richesse insoupçonnée de la faune locale.
@@ -23,7 +24,7 @@ L'exposition contient <strong>huit affiches disposées le long des chemins</stro
 Ces affiches représentent les insectes qui peuplent nos espaces verts et que vous pouvez retrouver à proximité.
 </p>
 <p>
-Pour vous aider à faire cette balade, une <strong>carte interactive</strong>  est à votre disposition dans la rubrique <a href="https://les-petites-betes-en-ville.netlify.app/le-parcours/"> Le parcours</a>  sur ce site. Vous pourrez y retourver tous les points d'affichage et l'itinéraire pour vous y rendre.
+Pour vous aider à faire cette balade, une <strong>carte interactive</strong>  est à votre disposition dans la rubrique <a href="https://les-petites-betes-en-ville.netlify.app/le-parcours/"> le parcours</a>  sur ce site. Vous pourrez y retourver tous les points d'affichage et l'itinéraire pour vous y rendre.
 <br>
 Tout le long du chemin un marquage au sol a également été mis en place, si vous voyez le logo ci-dessous c'est que vous êtes sur le bon chemin.
 </p>
@@ -31,7 +32,7 @@ Tout le long du chemin un marquage au sol a également été mis en place, si vo
 
 		</Project>
 		
-		<Project title="Découvrez le projet">
+		<Project title="Découvrez le projet" imgUrl={IntroImg.src} direction="right">
 			<p>
 Le projet <strong>"Les Petites Bêtes en Ville”</strong> émerge de la collaboration entre le service culture, <strong>la Ferme d'en Haut</strong>, et divers acteurs impliqués dans la biodiversité, la jeunesse, l'éducation à l'environnement, et les arts. S'inscrivant dans une démarche transversale et pédagogique, cette initiative vise à sensibiliser les habitants de <strong>Villeneuve d'Ascq</strong> aux enjeux du développement durable à travers la culture.
 </p>
