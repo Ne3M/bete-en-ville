@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/le-bourdon-terrestre/bourdon-terrestre-02.jpg';
+import BugImage2 from '../images/le-bourdon-terrestre/bourdon-terrestre-03.jpg';
+import BugImage3 from '../images/le-bourdon-terrestre/bourdon-terrestre-01.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/le-bourdon-terrestre/kids_drawings/bourdon-terrestre-1_Elliot.jpg';
+import KidsDrawing2 from '../images/le-bourdon-terrestre/kids_drawings/bourdon-terrestre-2_Elliot.jpg';
+// import KidsDrawing3 from '../images/le-bourdon-terrestre/kids_drawings/abeille_3_Joseph.jpg';
+// import KidsDrawing4 from '../images/le-bourdon-terrestre/kids_drawings/abeille_4_Naila.jpg';
+
+const title="Le bourdon terrestre"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Bombus terrestris"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_8_9t7fe8ek9k"}
+    direction='right'
+    quotes="Grâce à l’électricité statique produite en volant, le bourdon attire naturellement le pollen sur ses poils, rendant chaque visite de fleur encore plus efficace !"
+    >
+    <p slot="bug-intro-start">Trapus, velu, reconnaissable à ses bandes noires, jaunes pâles et blanches, le bourdon terrestre est l’un des premiers pollinisateurs à sortir dès la fin de l’hiver. Son bourdonnement grave est souvent le premier bruit du printemps dans un jardin ou un parc.
+      Contrairement à l’abeille domestique, il ne vit pas dans une grande ruche mais dans de petites colonies naturelles, souvent cachées dans un vieux terrier ou sous un tas d’herbe. Une seule reine fonde la colonie au printemps après avoir passé l’hiver seule en hibernation.      
+    <br>Le bourdon terrestre est un champion du froid : il peut voler dès 5 à 8 °C. Il chauffe son corps en vibrant ses muscles thoraciques sans battre des ailes — un vrai petit radiateur ambulant ! Cela lui permet de butiner les toutes premières fleurs du printemps, indispensables à la biodiversité.
+  </p>
+    <p>Une colonie peut atteindre 200 à 400 individus à son maximum. Ce sont surtout des ouvrières, qui nourrissent les larves, protègent le nid, et récoltent le nectar et le pollen. Grâce à leur corps très poilu, les bourdons sont de super-pollinisateurs.
+      Et ce n’est pas tout : ils pratiquent la pollinisation vibratile. En vibrant à haute fréquence sur certaines fleurs (comme la tomate ou le bleuet), ils libèrent un pollen qui resterait inaccessible aux autres insectes.
+    <br>Très bien adapté à la ville, on peut observer le bourdon terrestre dans les jardins, balcons fleuris, potagers urbains ou parcs publics. Il joue un rôle vital dans la reproduction des plantes, et même dans certaines cultures agricoles où il est utilisé en serre pour polliniser les tomates.
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Voler dans le froid", 
+        text:" Dès la fin de l’hiver, il est déjà là, actif dès 5 °C grâce à son système de chauffe interne."
+      }}
+      power2={{
+        title:"Pollinisation vibratile ", 
+        text:" Il est l’un des seuls insectes capables de faire vibrer certaines fleurs pour en libérer le pollen."
+      }}
+      power3={{
+        title:"Électro-aimant à pollen", 
+        text:"Son vol génère une charge électrostatique qui attire naturellement le pollen sur ses poils."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

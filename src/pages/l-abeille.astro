@@ -17,6 +17,7 @@ import KidsDrawing3 from '../images/abeille/kids_drawings/abeille_3_Joseph.jpg';
 import KidsDrawing4 from '../images/abeille/kids_drawings/abeille_4_Naila.jpg';
 
 const title="L'abeille solitaire"
+const route="Pont de bois"
 ---
 
 <Layout title={title}>
@@ -24,10 +25,13 @@ const title="L'abeille solitaire"
     
     <Creature
     title={title}
+    route={route}
     latinName="Andrena"
     img={BugImage1.src}
     img2={BugImage2.src}
     img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_4_nbgzu19ojf"}
+    direction='right'
     quotes="L'abeille coupeuse de feuilles découpe des morceaux de feuilles pour tapisser ses nids, protégeant ainsi les larves et maintenant des conditions idéales d'humidité et de température."
     >
     <p slot="bug-intro-start">Les abeilles solitaires, contrairement aux abeilles sociales comme l'abeille domestique, ne vivent pas en colonies. Chaque femelle construit et approvisionne son propre nid, souvent dans des tunnels creusés dans le sol, du bois ou des tiges creuses. Il existe plus de 20 000 espèces d'abeilles solitaires dans le monde, représentant la majorité des espèces d'abeilles.

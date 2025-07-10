@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/l-osmie-cornue/osmie-cornue-01.jpg';
+import BugImage2 from '../images/l-osmie-cornue/osmie-cornue-02.jpg';
+import BugImage3 from '../images/l-osmie-cornue/osmie-cornue-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/l-osmie-cornue/kids_drawings/osmie-cornue-1_Elliot.jpg';
+import KidsDrawing2 from '../images/l-osmie-cornue/kids_drawings/osmie-cornue-2_Elliot.jpg';
+import KidsDrawing3 from '../images/l-osmie-cornue/kids_drawings/osmie-cornue-3_Elliot.jpg';
+// import KidsDrawing4 from '../images/abeille/kids_drawings/abeille_4_Naila.jpg';
+
+const title="L'osmie cornue"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Osmia cornuta"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Une seule osmie cornue peut polliniser autant de fleurs qu’une vingtaine d’abeilles domestiques."
+    >
+    <p slot="bug-intro-start">Petite abeille sauvage trapue et velue, l’osmie cornue est une habituée discrète mais précieuse de nos jardins, balcons, vergers et parcs urbains. Active dès le début du printemps, on la reconnaît à son thorax roux-orange, son abdomen noir et son vol rapide. Contrairement à l’abeille domestique, elle est solitaire : chaque femelle construit et gère son propre nid, sans ouvrières ni hiérarchie.
+      Elle cherche une petite cavité naturelle ou artificielle pour y pondre ses œufs : tiges creuses, murs fissurés, bûches percées ou hôtels à insectes. Dans chaque cavité, elle construit plusieurs cellules en série, séparées par des cloisons de boue qu’elle fabrique elle-même. Chaque cellule contient du pollen et du nectar pour nourrir la larve, un œuf, puis un bouchon de terre vient refermer l’entrée.      
+    <br>Ce mode de vie indépendant et son efficacité en font une championne de la pollinisation. Grâce à son corps velu et ses brosses situées sous l’abdomen, elle transporte une grande quantité de pollen, visitant parfois jusqu’à 2 000 fleurs par jour. Contrairement à l’abeille domestique, elle peut travailler par temps frais, ce qui la rend indispensable au début du printemps, quand peu d’autres pollinisateurs sont actifs.
+  </p>
+    <p>Sa vie adulte est courte : 4 à 6 semaines, juste le temps de se reproduire et d’assurer la génération suivante. Les jeunes osmies se développeront lentement dans leur cocon et émergeront au printemps suivant, parfaitement synchronisées avec les floraisons précoces.
+    <br>Adaptée aux milieux urbains, l’osmie cornue trouve sa place sur les façades ensoleillées, dans les jardins partagés, les vergers urbains ou les simples balcons fleuris. Elle est totalement inoffensive pour l’homme : paisible, elle ne pique que si elle est fortement dérangée — et même dans ce cas, sa piqûre est très légère.
+    Oubliez la ruche : l’osmie cornue est une ouvrière indépendante, infatigable, et pourtant souvent méconnue… même si elle est l’un des meilleurs alliés du printemps.    
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Wonder Pollinisatrice", 
+        text:" Grâce à ses poils ventraux et son endurance, elle transporte plus de pollen que beaucoup d’autres abeilles."
+      }}
+      power2={{
+        title:"Maçonne ingénieuse", 
+        text:" Elle fabrique ses nids avec de la boue, cellule par cellule, dans des cavités qu’elle trouve ou que l’on peut lui offrir."
+      }}
+      power3={{
+        title:"Adaptée à la ville", 
+        text:" Elle s’installe facilement en milieu urbain, même sur un simple balcon fleuri ou dans un hôtel à insectes."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

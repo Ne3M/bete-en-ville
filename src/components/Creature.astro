@@ -3,15 +3,17 @@ import PrevNext from '../components/layout/prev_next.astro';
 
 interface Props {
     title: string;
+    route: string;
     latinName: string;
     img: string;
     img2: string;
     img3: string;
     quotes: string;
     direction?: "left"|"right";
+    animated3D?: string;
 }
 
-const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.props;
+const { title, route, latinName, img, img2, img3, quotes, direction = 'left', animated3D } = Astro.props;
 ---
     
     <section class=`bug-presentation bug-presentation--${direction}`>
@@ -22,7 +24,18 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
             <div class="bug-intro-start">
                 <slot name="bug-intro-start"  />
             </div>
+
+            {
+            animated3D ? 
+            <div class="bug-intro-start-img">
+                <img loading="lazy" src={img3} alt={title} class="round-shadow" />
+                <a class="ra-btn" href={animated3D} target="_blank" rel="noopener noreferrer">
+                    Voir en Réalité Augmentée
+                </a>
+            </div> 
+            : 
             <img loading="lazy" src={img3} alt={title} class="bug-intro-start-img round-shadow" />
+            }
 
             <blockquote class="bug-intro-quote">
                 <span>{quotes}</span>
@@ -44,7 +57,7 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
         <slot name="drawings" />
         <slot name="poster" />
         
-        <PrevNext title={title} />
+        <PrevNext title={title} route={route} />
                
     </section>
     
@@ -57,6 +70,11 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
             align-items: end;
             gap: 1rem;
             margin-bottom: 3rem;
+
+            & > * {
+                order:2;
+            }
+
             &-start {
                 width: calc(70% - 1rem);
                 flex-shrink: 1;
@@ -66,12 +84,15 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                 }
                 &-img {
                     width: 30%;
-                    height: auto;
-                    object-fit: cover;
-                    aspect-ratio: 1;
                     margin: 0 auto;
                     align-self: start;
+
                 }
+            }
+            img {
+                object-fit: cover;
+                aspect-ratio: 1;
+                height: auto;
             }
 
             &-quote {
@@ -128,13 +149,37 @@ const { title, latinName, img, img2, img3, quotes, direction = 'left' } = Astro.
                     }
                 }
             }
+
         }
+
+       
+
+        .ra-btn {
+            background: #2A7B9B;
+            background: linear-gradient(20deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+            color:#fff;
+            text-shadow: 0 1px 3px #000;
+            border:0;
+            border-radius: 2rem;
+            padding: .5rem .75rem;
+            text-decoration: none;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         h2 {
             font-size: 3rem;
             margin: 0;
         }
 
         @media (max-width: 768px) {
+            &--right {
+                .bug-intro-start-img {
+                    order:1 !important
+                }
+            }
             .bug-intro {
                 &-text {
                     margin-bottom: 2rem;

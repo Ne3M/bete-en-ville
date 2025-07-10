@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/le-syrphe/le-syrphe-01.jpg';
+import BugImage2 from '../images/le-syrphe/le-syrphe-02.jpg';
+import BugImage3 from '../images/le-syrphe/le-syrphe-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+// import KidsDrawing1 from '../images/le-syrphe/kids_drawings/abeille_1_Océane.jpg';
+// import KidsDrawing2 from '../images/le-syrphe/kids_drawings/abeille_2_Inaya.jpg';
+// import KidsDrawing3 from '../images/le-syrphe/kids_drawings/abeille_3_Joseph.jpg';
+// import KidsDrawing4 from '../images/le-syrphe/kids_drawings/abeille_4_Naila.jpg';
+
+const title="Le syrphe"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Syrphidae"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_12_7aeruc0jub"}
+    direction='right'
+    quotes="Certains syrphes vont jusqu’à imiter le vol saccadé des guêpes, pas seulement leur apparence. Leur mimétisme n’est pas seulement visuel : c’est une stratégie de survie complète."
+    >
+    <p slot="bug-intro-start">Souvent confondus avec des guêpes ou des abeilles, les syrphes sont en réalité des mouches inoffensives. Leur déguisement à rayures noires et jaunes n’est qu’une illusion : ils n’ont ni dard, ni venin. Ce camouflage imitant des insectes piquants, appelé mimétisme batésien, leur permet d’échapper à certains prédateurs.
+      Les syrphes sont reconnaissables à leur vol particulier : ils peuvent rester immobiles dans les airs, en vol stationnaire, puis foncer brusquement dans une autre direction. C’est l’un des meilleurs moyens de les identifier, surtout autour des fleurs qu’ils visitent avec agilité.
+    <br>Actifs du printemps à l’automne, on les trouve partout où il y a des fleurs : jardins, balcons, prairies urbaines, haies ou bords de chemin. Ils viennent butiner le nectar et le pollen, jouant ainsi un rôle important — et souvent sous-estimé — dans la pollinisation, en particulier en ville.
+    </p>
+    <p>Chaque syrphe vit de manière indépendante. Il n’a pas de ruche, pas de colonie, pas de production de miel. Cela ne les empêche pas d’être très nombreux, très efficaces, et d’accomplir un travail essentiel pour la nature… en toute discrétion.
+    <br>Mais les syrphes ne se contentent pas de polliniser. Chez certaines espèces, les larves sont de redoutables prédatrices de pucerons. Ces petites larves blanches, invisibles au premier coup d'œil, peuvent dévorer des dizaines de pucerons par jour. Elles offrent ainsi un service écologique précieux aux jardiniers, en limitant naturellement les ravageurs.
+    D’autres larves de syrphes vivent dans des milieux variés : eau stagnante, compost, matière organique en décomposition… Ce groupe regorge de diversité, aussi bien dans les formes que dans les rôles écologiques.    
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Maîtres du déguisement", 
+        text:"  Ils imitent parfaitement l’apparence (et parfois le vol) de guêpes ou d’abeilles, sans jamais piquer."
+      }}
+      power2={{
+        title:"Pollinisateurs discrets ", 
+        text:"  Solitaire mais efficace, chaque syrphe contribue à la reproduction des plantes autour de lui."
+      }}
+      power3={{
+        title:"Larves mangeuses de pucerons", 
+        text:" Certaines espèces protègent naturellement les plantes en se nourrissant des pucerons, sans pesticide."
+      }}
+    />
+
+    <!-- <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src
+        ]}
+    ></Drawings> -->
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

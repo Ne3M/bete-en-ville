@@ -9,24 +9,68 @@
         header.classList.toggle('menu-open');
         btnSvg.forEach(svg => svg.classList.toggle('hidden'));
     })
+
+    const subNavBtns = document.querySelectorAll('.nav-submenu-btn')
+    const subNavs = document.querySelectorAll('.nav-submenu')
+    subNavBtns.forEach(subNavBtn => {
+        subNavBtn.addEventListener('click', e => {
+            const isOpen = subNavBtn.getAttribute('aria-expanded') === 'true'
+            // console.log({isOpen})
+
+            subNavBtns.forEach(btn => {
+                btn.setAttribute('aria-expanded', 'false')
+            })
+            subNavs.forEach(subNav => {
+                subNav.classList.remove('nav-submenu--open')
+            })            
+            
+            if(isOpen) return;
+            
+            const linkedSubNav = document.getElementById(subNavBtn.getAttribute('aria-controls'));
+            linkedSubNav.classList.toggle('nav-submenu--open')
+            subNavBtn.setAttribute('aria-expanded', 'true')
+            
+        })
+    })
 </script>
 <nav class="main-nav">
 
     <ul class="nav-main-page">
-        <li><a href="/">Accueil</a>
-        <li><a href="/le-parcours">Le parcours</a>            
+        <li class="nav-main-cat nav-main-cat--home nav-submenu-btn"><a class="main-nav-link" href="/">Accueil</a>
+        <li class="nav-main-cat">
+            <button class="nav-submenu-btn main-nav-link" aria-expanded="false" aria-controls="nav-bug-route-1">Le parcours Pont de bois</button>            
+            <div id="nav-bug-route-1" class="nav-submenu">
+                <a href="/le-parcours-pont-de-bois" class="main-nav-link" aria-label="Voir la carte du parcours Pont de bois">Voir la carte</a>
+                <span>Les insectes</span>
+                <ul class="nav-bug-page">
+                    <li><a class="main-nav-link" href="/la-coccinelle">La coccinelle</a>
+                    <li><a class="main-nav-link" href="/l-abeille">L'abeille</a>
+                    <li><a class="main-nav-link" href="/l-araignée-crabe">L'araignée crabe</a>
+                    <li><a class="main-nav-link" href="/le-gendarme">Le gendarme</a>
+                    <li><a class="main-nav-link" href="/la-libellule">La libellule</a>
+                    <li><a class="main-nav-link" href="/le-mille-pattes">Le mille-pattes</a>
+                    <li><a class="main-nav-link" href="/le-papillon">Le papillon</a>
+                    <li><a class="main-nav-link" href="/la-chrysomèle">La Chrysomèle</a>
+                </ul>
+            </div>
+        <li class="nav-main-cat">
+            <button class="nav-submenu-btn main-nav-link" aria-expanded="false" aria-controls="nav-bug-route-2">Le parcours Babylone</button>            
+            <div id="nav-bug-route-2" class="nav-submenu">
+                <a href="/le-parcours-babylone" class="main-nav-link" aria-label="Voir la carte du parcours Babylone">Voir la carte</a>
+                <span>Les insectes</span>
+                <ul class="nav-bug-page">
+                    <li><a class="main-nav-link" href="/le-bourdon-terrestre">Le bourdon terrestre</a>
+                    <li><a class="main-nav-link" href="/le-syrphe">Le syrphe</a>
+                    <li><a class="main-nav-link" href="/le-ver-de-terre">Le ver de terre</a>
+                    <li><a class="main-nav-link" href="/le-paon-du-jour">Le paon du jour</a>
+                    <li><a class="main-nav-link" href="/le-cloporte">Le cloporte</a>
+                    <li><a class="main-nav-link" href="/la-fourmi-noire">La fourmi noire</a>
+                    <li><a class="main-nav-link" href="/l-osmie-cornue">L'osmie cornue</a>
+                    <li><a class="main-nav-link" href="/l-araignée-sauteuse">L'araignée sauteuse</a>
+                </ul>
+            </div>
     </ul>
-    <span>Les insectes</span>
-    <ul class="nav-bug-page">
-        <li><a href="/la-coccinelle">La coccinelle</a>
-        <li><a href="/l-abeille">L'abeille</a>
-        <li><a href="/l-araignée-crabe">L'araignée crabe</a>
-        <li><a href="/le-gendarme">Le gendarme</a>
-        <li><a href="/la-libellule">La libellule</a>
-        <li><a href="/le-mille-pattes">Le mille-pattes</a>
-        <li><a href="/le-papillon">Le papillon</a>
-        <li><a href="/la-chrysomèle">La Chrysomèle</a>
-    </ul>
+    
 </nav>
 
 <style>
@@ -47,40 +91,80 @@
         width: 100%;
         box-sizing: border-box;
         position: absolute;
+        max-height: 80vh;
+        overflow-y: auto;
         pointer-events: none;
     }
+
+    .main-nav .nav-submenu-btn {
+        border: 0;
+        background: none;
+        font-size: 1.25rem;
+        line-height: 1.5;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+
     .main-nav ul {
         display: flex;
-        gap: 1rem;
+        gap: .5rem;
+        flex-wrap: wrap;
     }
     .main-nav ul.nav-bug-page {
         flex-wrap: wrap;
+        font-size: 1rem;
     }
     .main-nav ul.nav-bug-page li {
         flex-basis: 20%;
+        flex-grow: 1;
     }
 
-    .main-nav ul li {
+    .main-nav ul li.nav-main-cat {
         flex-grow: 1;
+        white-space: nowrap;
+    }
+    .main-nav ul li.nav-main-cat--home {
+        width: 100%;
+    }
+
+    .main-nav ul li.nav-main-cat .main-nav-link {
+        padding: .5rem;
         background-color: rgba(255,255,255,0.15);
         backdrop-filter: hue-rotate(50deg);
         transition: all 0.4s ease-in;
-        white-space: nowrap;
+        width: 100%;
     }
-    .main-nav ul li:hover {
+    .main-nav ul li.nav-main-cat .main-nav-link:hover {
         backdrop-filter: hue-rotate(180deg);
     }
+
+    .main-nav ul .nav-submenu {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all .5s ;
+        margin: 0 .75rem;
+        font-size: 1rem;
+    }
+    .main-nav ul .nav-submenu--open {
+        height: auto;
+        opacity: 1;
+        margin: 1rem .75rem 0;
+    }
+
     .main-nav a {
         text-decoration: none;
         color: #fff;
         display: inline-block;
-        padding: .5rem;
-        width: 100%;
+        box-sizing: border-box;
     }
     .main-nav span {
-        margin-top: 1rem;
+        margin-top: .5rem;
         display: block;
-        font-size: 1.75rem;
+        font-size: 1.25rem;
     }
 
     :global(.menu-open) .main-nav {

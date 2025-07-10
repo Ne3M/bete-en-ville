@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/la-fourmi-noire/la-fourmi-noire-01.jpg';
+import BugImage2 from '../images/la-fourmi-noire/la-fourmi-noire-02.jpg';
+import BugImage3 from '../images/la-fourmi-noire/la-fourmi-noire-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/la-fourmi-noire/kids_drawings/fourmi_mathis.jpg';
+import KidsDrawing2 from '../images/la-fourmi-noire/kids_drawings/fourmi1.jpg';
+import KidsDrawing3 from '../images/la-fourmi-noire/kids_drawings/fourmi2.jpg';
+import KidsDrawing4 from '../images/la-fourmi-noire/kids_drawings/fourmi3.jpg';
+
+const title="La fourmi noire"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Lasius niger"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_11_g2imwbmt7t"}
+    direction='right'
+    quotes="Les fourmis peuvent “sacrifier” leur propre chemin pour suivre la piste chimique la plus efficace."
+    >
+    <p slot="bug-intro-start">Discrète mais omniprésente, la fourmi noire des jardins est l’un des insectes les plus familiers de nos villes, que l’on croise en file bien ordonnée sur les trottoirs ou entre les dalles. Pourtant, sous nos pieds, elle cache une vie collective d’une complexité fascinante.
+      Cette petite fourmi vit en colonie souterraine, souvent composée de plusieurs milliers d’individus organisés autour d’une unique reine. La société qu’elles forment est dite eusociale, reposant sur une répartition précise des rôles : la reine pond les œufs, pendant que les ouvrières assurent toutes les autres tâches — soins aux larves, entretien du nid, alimentation, défense… Et tout cela sans chef apparent.      
+    <br>Le secret de cette coopération : un système de communication sophistiqué basé sur des phéromones. Les fourmis déposent ces substances chimiques au sol pour indiquer un passage, alerter d’un danger, ou guider vers une source de nourriture. Grâce à cela, la colonie fonctionne comme un super-organisme intelligent et parfaitement synchronisé.
+  </p>
+    <p>La reine peut vivre jusqu’à 15 ans et pondre des centaines de milliers d’œufs au cours de sa vie. Chaque année, lorsque les conditions sont réunies (chaleur et humidité), des fourmis ailées — mâles et jeunes reines — quittent le nid pour effectuer leur vol nuptial. Ce spectacle impressionnant est sans danger pour l’homme : les mâles meurent peu après l’accouplement, tandis que les reines fécondées fondent de nouvelles colonies.
+    <br>Dans les environnements urbains, la fourmi noire s’installe partout : pelouses, jardinières, murets, interstices de trottoirs… Elle y joue un rôle important dans le recyclage des matières organiques, en nettoyant les sols et en aérant la terre. Elle élève parfois même des colonies de pucerons, qu’elle protège en échange de leur miellat, une substance sucrée qu’elle récolte.
+    Espèce robuste, organisée et étonnamment bien adaptée à la ville, la fourmi noire est un maillon essentiel de la biodiversité urbaine.    
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Organisation collective", 
+        text:" Sans chef ni plan, la colonie fonctionne grâce à une intelligence collective fondée sur les phéromones."
+      }}
+      power2={{
+        title:"Ingénierie du sol ", 
+        text:" En creusant leurs galeries, les fourmis aèrent la terre et participent à la fertilité des sols urbains."
+      }}
+      power3={{
+        title:"Recyclage urbain", 
+        text:" Elles nettoient leur environnement en récupérant débris, insectes morts et autres ressources naturelles, contribuant ainsi à l’équilibre écologique."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
