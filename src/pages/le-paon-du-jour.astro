@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/le-paon-du-jour/paon-du-jour-01.jpg';
+import BugImage2 from '../images/le-paon-du-jour/paon-du-jour-02.jpg';
+import BugImage3 from '../images/le-paon-du-jour/paon-du-jour-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour_dounia.jpg';
+import KidsDrawing2 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour1.jpg';
+import KidsDrawing3 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour2.jpg';
+import KidsDrawing4 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour3.jpg';
+import KidsDrawing5 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour4.jpg';
+import KidsDrawing6 from '../images/le-paon-du-jour/kids_drawings/paon-du-jour5.jpg';
+
+const title="Le paon du jour"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Aglais io"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="En plus de ses ailes aux yeux impressionnants, le paon du jour peut produire un bruit sec en frottant ses ailes quand il se sent menacé."
+    >
+    <p slot="bug-intro-start">Le paon du jour est l’un des papillons les plus spectaculaires et reconnaissables de nos régions. Avec ses ailes rouge-brun ornées de grands ocelles colorés imitant des yeux, il impressionne autant qu’il intrigue. Ces faux yeux ne sont pas qu’un décor : ils servent d’arme défensive. Quand un danger survient, le papillon ouvre ses ailes d’un coup sec, effrayant les oiseaux et autres prédateurs. Ce stratagème visuel lui vaut d’ailleurs son nom, en référence au paon et à son plumage oculaire.
+    <br>Ce papillon est très adaptable. Il fréquente les prairies, les friches, les haies, les bords de chemins et les jardins, mais aussi les zones urbaines fleuries. Partout où il trouve du nectar et des orties — sa plante-hôte — il peut s’installer. Le paon du jour est une preuve vivante que la nature peut cohabiter avec la ville, à condition de lui laisser un peu d’espace.
+    <br>Contrairement à la plupart des papillons, il hiverne à l’état adulte. Il se réfugie dans des endroits abrités (cabanons, greniers, troncs creux, tas de bois…) et entre en dormance. Cela lui permet de réapparaître dès février ou mars, faisant partie des premiers papillons du printemps.
+  </p>
+    <p>La femelle pond ses œufs en grappes sur les orties. Les chenilles noires et épineuses qui en sortent vivent en groupe et se nourrissent exclusivement de cette plante souvent mal-aimée mais essentielle. Après leur croissance, elles se métamorphosent en chrysalides, puis en adultes prêts à recommencer le cycle.
+    <br>Pollinisateur actif, le paon du jour joue un rôle important dans la reproduction des plantes et dans la chaîne alimentaire. Sa présence signale un environnement riche en biodiversité, où même les plantes sauvages comme l’ortie ont leur place.
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Effet de surprise", 
+        text:" Grâce à ses ocelles colorés, il effraie les prédateurs en ouvrant soudainement ses ailes."
+      }}
+      power2={{
+        title:"Pollinisateur ", 
+        text:" Il butine de nombreuses fleurs et contribue à la pollinisation de plantes sauvages et cultivées."
+      }}
+      power3={{
+        title:"Hivernage exceptionnel", 
+        text:"Contrairement à la majorité des papillons, il passe l’hiver à l’état adulte, prêt à réapparaître dès les premiers beaux jours."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src,
+        KidsDrawing3.src,
+        KidsDrawing4.src,
+        KidsDrawing5.src,
+        KidsDrawing6.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

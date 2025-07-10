@@ -17,6 +17,7 @@ import KidsDrawing3 from '../images/gendarme/kids_drawings/gendarme_3_Zoé.jpg';
 import KidsDrawing4 from '../images/gendarme/kids_drawings/gendarme_4_Nathan.jpg';
 
 const title="Le gendarme"
+const route="Pont de bois"
 ---
 
 <Layout title={title}>
@@ -24,10 +25,13 @@ const title="Le gendarme"
     
     <Creature
     title={title}
+    route={route}
     latinName="Pyrrhocoris apterus"
     img={BugImage1.src}
     img2={BugImage2.src}
     img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_6_1hk5l1ad2d"}
+    direction='right'
     quotes=`Son apparence rouge et noire envoie le message a ses potentiels prédateurs : "je suis venimeux"`
     >
     <p slot="bug-intro-start">Le gendarme, est un insecte hétéroptère reconnaissable à sa carapace rouge et noire, souvent vu en groupes importants. Malgré les préoccupations parfois associées à sa présence, le gendarme est totalement inoffensif pour les plantes et les humains, ne causant aucun dégât et ne piquant pas. Il se nourrit principalement de plantes telles que les Malvacées et les Tiliacées, en particulier de leurs fruits et graines, mais peut également consommer des insectes vivants ou morts et des œufs d'insectes. En tant qu'insecte auxiliaire, le gendarme est bénéfique au jardin en aidant à contrôler les populations d'insectes nuisibles comme les pucerons.</p>

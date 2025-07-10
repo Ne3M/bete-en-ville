@@ -18,14 +18,16 @@ const { drawings, intro = defaultIntro } = Astro.props;
 
     <div class="bug-drawing">
         {drawings.map((drawing,i)=> {
-
             let className = "landscape";
             if( i==5 || i==4 ||i==1 ) className = "portrait";
             if( i==6 ) className = "square";
-            let name = drawing.split('_').reverse()[0].split('.')[0]
+            let fileName = drawing.split('/').reverse()[0]
+            let name = (fileName.includes('_')) ? 
+                fileName.split('/').reverse()[0].split('_').reverse()[0].split('.')[0] 
+                : "";
             return <figure class={className}  style={`--bg-image: url('${drawing}')`}>
                 <img loading="lazy" src={drawing} alt={`${i+1}`} class="round-shadow" />
-                <figcaption>Dessin par {name}</figcaption>
+                {name != "" && <figcaption>Dessin par {name}</figcaption>}
             </figure>
         })}
 
@@ -44,18 +46,56 @@ const { drawings, intro = defaultIntro } = Astro.props;
         width: 100%;
         columns: 2;
         column-gap: 1rem;
+        vertical-align: top;
+        
+
         @media (min-width: 768px) {
             columns: 3;
         }
         @media (min-width: 1280px) {
             columns: 4;
         }
+
+        &:not(:has(:nth-child(4))) {
+            columns: 1;
+            figure {
+                width: 48%;
+                margin: 0 1% 3rem;
+            }
+            @media (min-width: 768px) {
+                columns: 2;
+                figure {
+                    width: 100%;
+                    margin: 0 0 3rem;
+                }
+            }
+            @media (min-width: 1280px) {
+                columns: 3;
+            }
+        }
+        &:not(:has(:nth-child(3))) {
+            columns: 1;
+            figure {
+                width: 48%;
+                margin: 0 1% 3rem;
+            }
+            @media (min-width: 768px) {
+                columns: 1;
+                figure {
+                    width: 48%;
+                    margin: 0 1% 3rem;
+                }
+            }
+            @media (min-width: 1280px) {
+                columns: 2;
+            }
+        }
     }
     figure {
         margin: 0;
         display: inline-block;
         width: 100%;
-        margin: 0 0 2rem;
+        margin: 0 0 4rem;
         position: relative;
         &:before {
             content:"";

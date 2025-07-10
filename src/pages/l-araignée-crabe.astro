@@ -19,6 +19,7 @@ import KidsDrawing5 from '../images/araignee-crabe/kids_drawings/araignee-crabe_
 import KidsDrawing6 from '../images/araignee-crabe/kids_drawings/araignee-crabe-6_Thomas.jpg';
 
 const title="L'araignée crabe"
+const route="Pont de bois"
 ---
 
 <Layout title={title}>
@@ -26,10 +27,13 @@ const title="L'araignée crabe"
     
     <Creature
     title={title}
+    route={route}
     latinName="Thomisidae"
     img={BugImage1.src}
     img2={BugImage2.src}
     img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_1_qpyxg187mr"}
+    direction='right'
     quotes="L'araignée-crabe Misumena vatia peut ajuster sa couleur du blanc au jaune pour se camoufler sur les fleurs, augmentant ainsi son efficacité à capturer les pollinisateurs."
     >
     <p slot="bug-intro-start">L'araignée-crabe, également connue sous le nom de thomise, appartient à la famille des Thomisidae. Elle se distingue par sa capacité unique à se déplacer latéralement, à la manière d'un crabe, d'où elle tire son nom. Les araignées-crabes sont souvent de petite taille, avec des corps robustes et des pattes antérieures plus longues, ce qui leur permet de saisir leurs proies avec précision. Elles sont largement répandues dans le monde entier, principalement dans les régions tempérées et tropicales.

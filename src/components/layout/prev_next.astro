@@ -1,11 +1,13 @@
 ---
 interface Props {
 	title: string;
+    route: string;
 }
 
-const { title } = Astro.props;
+const { title, route } = Astro.props;
 
-const bug_pages = [
+const bug_pages = {
+    "Pont de bois": [
     {
         name:"Le papillon Vulcain",
         url:"/le-papillon"
@@ -38,23 +40,57 @@ const bug_pages = [
         name:"La coccinelle",
         url:"/la-coccinelle"
     },
-]
+],
+    "Babylone": [
+        {
+            name:"Le bourdon terrestre",
+            url:"/le-bourdon-terrestre"
+        },
+        {
+            name:"Le syrphe",
+            url:"/le-syrphe"
+        },
+        {
+            name:"Le ver de terre",
+            url:"/le-ver-de-terre"
+        },
+        {
+            name:"Le paon du jour",
+            url:"/le-paon-du-jour"
+        },
+        {
+            name:"Le cloporte",
+            url:"/le-cloporte"
+        },
+        {
+            name:"La fourmi noire",
+            url:"/la-fourmi-noire"
+        },
+        {
+            name:"L'osmie cornue",
+            url:"/l-osmie-cornue"
+        },
+        {
+            name:"L'araignée sauteuse",
+            url:"/l-araignée-sauteuse"
+        }
+        
+    ]
+}
 
-const currentPage = bug_pages.findIndex(bug => bug.name === title)
-const prevPage = (currentPage === 0) ? bug_pages.length-1 : currentPage-1
-const nextPage = (currentPage === bug_pages.length-1) ? 0 : currentPage+1
-
+const currentPage = bug_pages[route].findIndex(bug => bug.name === title)
+const prevPage = (currentPage === 0) ? bug_pages[route].length-1 : currentPage-1
+const nextPage = (currentPage === bug_pages[route].length-1) ? 0 : currentPage+1
 ---
-
 <aside>
     <strong class="bug-title">Découvrez les autres insectes</strong>
-    <a href={bug_pages[prevPage].url}>
-        <span class="bug-arrow">◀</span> {bug_pages[prevPage].name}
+    <a href={bug_pages[route][prevPage].url}>
+        <span class="bug-arrow">◀</span> {bug_pages[route][prevPage].name}
     </a>
-    <a href={bug_pages[nextPage].url}>
-        {bug_pages[nextPage].name} <span class="bug-arrow">▶</span>
+    <a href={bug_pages[route][nextPage].url}>
+        {bug_pages[route][nextPage].name} <span class="bug-arrow">▶</span>
     </a>
-</aside>
+</aside>    
 
 <style lang="scss">
     aside {

@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/le-cloporte/le-cloporte-01.jpg';
+import BugImage2 from '../images/le-cloporte/le-cloporte-02.jpg';
+import BugImage3 from '../images/le-cloporte/le-cloporte-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/le-cloporte/kids_drawings/cloporte_guillaume.jpg';
+import KidsDrawing2 from '../images/le-cloporte/kids_drawings/cloporte2.jpg';
+// import KidsDrawing3 from '../images/le-cloporte/kids_drawings/abeille_3_Joseph.jpg';
+// import KidsDrawing4 from '../images/le-cloporte/kids_drawings/abeille_4_Naila.jpg';
+
+const title="Le cloporte"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Philoscia muscorum"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_9_9rnxz9ppo0"}
+    direction='right'
+    quotes="Les cloportes peuvent absorber l’humidité directement à travers certaines parties de leur corps, comme leurs pattes ou leurs uropodes. Une adaptation cruciale pour vivre sur la terre ferme !"
+    >
+    <p slot="bug-intro-start">On le croit insecte, il est crustacé ! Le cloporte commun, avec sa carapace segmentée et son allure de mini-tank, est un habitant discret mais essentiel des milieux urbains et naturels. Il vit dans les coins humides : sous les pierres, les feuilles mortes, les tas de bois ou de compost.
+      Comme ses cousins les crabes ou les crevettes, le cloporte respire avec des branchies. Mais lui vit sur terre ! Pour survivre, il doit rester dans des endroits frais et humides, car ses branchies ne fonctionnent que s’il est légèrement mouillé.
+    <br>Le cloporte est un décomposeur. Il se nourrit de végétaux morts, de bois pourri, de champignons, et transforme ces déchets en humus, une matière précieuse qui nourrit les plantes. Il aère le sol, favorise l’infiltration de l’eau et recycle les nutriments.
+  </p>
+    <p>Sa carapace rigide protège son corps et limite l’évaporation d’eau. En cas de danger, il peut se rouler en boule — une stratégie de défense appelée conglobation, qui le rend aussi dur à croquer qu’un petit galet.
+      Nocturne et discret, il joue pourtant un rôle écologique majeur : il nettoie les sols et participe à leur fertilité. En ville, on peut l’observer dans les jardins, sous les pots de fleurs, ou dans les recoins ombragés des parcs. Il est une pièce maîtresse de la biodiversité… qu’on ne voit presque jamais !      
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Dévoreur de déchets", 
+        text:" Il transforme les feuilles mortes et le bois en humus fertile pour les plantes."
+      }}
+      power2={{
+        title:"Maître du camouflage ", 
+        text:"  Il vit caché dans les recoins sombres et frais… sans jamais se dessécher."
+      }}
+      power3={{
+        title:"Mini-blindé", 
+        text:"Sa carapace le protège, et en cas de danger, il se roule en boule comme un vrai petit bouclier."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

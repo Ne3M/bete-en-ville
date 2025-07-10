@@ -18,6 +18,7 @@ import KidsDrawing5 from '../images/mille-pattes/kids_drawings/mille-pattes_5_É
 import KidsDrawing6 from '../images/mille-pattes/kids_drawings/mille-pattes_6_Romain.jpg';
 
 const title="Le mille-pattes"
+const route="Pont de bois"
 ---
 
 <Layout title={title}>
@@ -25,10 +26,13 @@ const title="Le mille-pattes"
     
     <Creature
     title={title}
+    route={route}
     latinName=" Diplopoda"
     img={BugImage1.src}
     img2={BugImage2.src}
     img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_3_vkab519avx"}
+    direction='right'
     quotes="Dans certaines cultures africaines et asiatiques, des mille-pattes sont utilisés en médecine traditionnelle pour traiter des affections cutanées, basés sur la croyance en leurs propriétés curatives."
     >
     <p slot="bug-intro-start">Le mille-pattes, ou myriapode, est un arthropode au corps allongé et segmenté, avec des paires de pattes sur chaque segment. Contrairement à son nom, il n'a pas mille pattes, mais varie de quelques dizaines à plusieurs centaines. Répartis mondialement, ils vivent surtout dans les sols humides, les litières de feuilles et les sous-bois. Principalement détritivores, ils se nourrissent de matière organique en décomposition, bien que certaines espèces soient carnivores ou herbivores. Leur rôle est crucial dans l'écosystème, car ils décomposent la matière organique, enrichissent le sol et facilitent le recyclage des nutriments.

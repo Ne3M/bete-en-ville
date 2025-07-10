@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/le-ver-de-terre/ver-de-terre-01.jpg';
+import BugImage2 from '../images/le-ver-de-terre/ver-de-terre-02.jpg';
+import BugImage3 from '../images/le-ver-de-terre/ver-de-terre-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/le-ver-de-terre/kids_drawings/ver-de-terre_bernadette.jpg';
+// import KidsDrawing2 from '../images/le-ver-de-terre/kids_drawings/abeille_2_Inaya.jpg';
+// import KidsDrawing3 from '../images/le-ver-de-terre/kids_drawings/abeille_3_Joseph.jpg';
+// import KidsDrawing4 from '../images/le-ver-de-terre/kids_drawings/abeille_4_Naila.jpg';
+
+const title="Le ver de terre"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Lumbricus terrestris"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    quotes="Les vers de terre ressentent les vibrations du sol : c’est leur radar ! Cela leur permet de fuir les prédateurs… ou d’anticiper la pluie."
+    >
+    <p slot="bug-intro-start">Discret, sans pattes ni yeux, le ver de terre est pourtant un acteur clé de la vie du sol. Présent dans les jardins, les forêts, les prairies et même sous les pelouses urbaines, il transforme la matière organique et façonne les sols avec une efficacité impressionnante.
+    <br>Il se nourrit de feuilles mortes, de micro-organismes et de débris végétaux. En les digérant, il produit un humus riche et fertile, essentiel à la croissance des plantes. Ses excréments, appelés turricules, sont de véritables engrais naturels.
+    <br>En creusant des galeries, parfois sur plusieurs mètres chaque année, le ver de terre aère le sol, améliore la circulation de l’eau et favorise l’enracinement des végétaux. Il agit comme un ingénieur du sol, en continu et sans relâche.
+  </p>
+    <p>Le ver de terre est hermaphrodite. Lors de l’accouplement, deux individus échangent leurs cellules reproductrices, puis chacun forme un cocon à l’aide de son clitellum (la bande claire visible sur leur corps). De là naîtront de jeunes vers, prêts à prendre le relais.
+    <br>Très sensible à l’humidité, il est surtout actif la nuit ou après la pluie. On peut parfois le voir remonter à la surface lors de fortes précipitations, quand ses galeries sont saturées d’eau.
+    Indispensables à l’écosystème, les vers de terre sont aussi d’excellents bioindicateurs : un sol riche en vers est un sol en bonne santé !
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Composteur", 
+        text:" Il transforme les déchets végétaux en humus ultra-fertile. Zéro gaspillage, 100 % recyclage !"
+      }}
+      power2={{
+        title:"Ingénieur", 
+        text:" Ses galeries souterraines améliorent l’aération, l’irrigation et la structure du sol."
+      }}
+      power3={{
+        title:"Clitellum magique", 
+        text:"Une bande spéciale qui fabrique des cocons : il se reproduit en douceur, sous terre."
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>

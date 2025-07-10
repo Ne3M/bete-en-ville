@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Creature from '../components/Creature.astro';
+// import Viewer from '../components/animal/Viewer.astro';
+import Superpower from '../components/animal/Superpower.astro';
+import Drawings from '../components/animal/Drawings.astro';
+
+
+import BugImage1 from '../images/l-araignee-sauteuse/l-araignee-sauteuse-01.jpg';
+import BugImage2 from '../images/l-araignee-sauteuse/l-araignee-sauteuse-02.jpg';
+import BugImage3 from '../images/l-araignee-sauteuse/l-araignee-sauteuse-03.jpg';
+// import Poster from '../images/abeille/abeille_poster.png';
+
+import KidsDrawing1 from '../images/l-araignee-sauteuse/kids_drawings/araignee_archibald.jpg';
+import KidsDrawing2 from '../images/l-araignee-sauteuse/kids_drawings/araignee_morgann.jpg';
+// import KidsDrawing3 from '../images/l-araignee-sauteuse/kids_drawings/abeille_3_Joseph.jpg';
+// import KidsDrawing4 from '../images/l-araignee-sauteuse/kids_drawings/abeille_4_Naila.jpg';
+
+const title="L'araignée sauteuse"
+const route = "Babylone"
+---
+
+<Layout title={title}>
+  <main>
+    
+    <Creature
+    title={title}
+    route={route}
+    latinName="Salticidae"
+    img={BugImage1.src}
+    img2={BugImage2.src}
+    img3={BugImage3.src}
+    animated3D={"https://mywebar.com/p/Project_10_55q0tbdr6r"}
+    direction='right'
+    quotes="Les araignées sauteuses n’ont pas de dents : elles injectent des sucs digestifs dans leurs proies et les boivent comme une soupe."
+    >
+    <p slot="bug-intro-start">Petite, vive et curieuse, l’araignée sauteuse est un minuscule prédateur qui vit souvent… juste sous notre nez ! Très commune en ville, on la trouve sur les murs ensoleillés, les clôtures, les balcons, les feuillages ou même les rebords de fenêtres.
+      Elle ne construit pas de toile pour chasser. Elle traque. Elle s’avance, s’arrête, observe… et bondit ! Grâce à ses puissantes pattes arrière, elle saute plusieurs fois la taille de son corps pour capturer de petits insectes.
+      <br>Son atout principal ? Sa vue ! L’araignée sauteuse possède huit yeux, dont deux énormes sur le devant de la tête. Elle voit en couleurs, perçoit les UV, et juge très précisément les distances. Une rare capacité chez les arthropodes !
+  </p>
+    <p>Avant chaque saut, elle fixe un fil de soie derrière elle — un harnais de sécurité, en cas d’échec. Si elle rate sa cible, elle remonte le fil comme une alpiniste miniature.
+      Actives le jour, les araignées sauteuses peuvent être très faciles à observer. Leur regard semble presque "expressif", et leur comportement d’exploration donne une impression d’intelligence rare chez les invertébrés.
+      <br>Inoffensives pour l’humain, elles sont utiles et fascinantes. Elles contribuent au contrôle des populations de petits insectes et enrichissent la biodiversité en milieu urbain, sans qu’on s’en rende compte !      
+    </p>
+    
+    
+    <!-- <Viewer 
+    slot="viewer"
+    alt={title}
+    src="/abeille.glb"
+    environmentImg="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg/1920px-PIA17944-MarsCuriosityRover-AfterCrossingDingoGapSanddune-20140209.jpg"
+    poster={Poster.src}
+    /> -->
+
+    <Superpower
+      slot="superpower"
+      power1={{
+        title:"Super-vision", 
+        text:" Elle voit en couleurs, en UV, et en relief. Une championne de l’observation."
+      }}
+      power2={{
+        title:"Chasseuse ninja", 
+        text:" Elle traque, bondit, capture… sans toile ! Une stratégie digne d’un félin miniature."
+      }}
+      power3={{
+        title:"Fil de vie", 
+        text:" Avant chaque saut, elle pose un fil de secours. Prudente et agile à la fois !"
+      }}
+    />
+
+    <Drawings
+      slot="drawings"
+      drawings={[
+        KidsDrawing1.src,
+        KidsDrawing2.src
+        ]}
+    ></Drawings>
+    
+  </Creature>
+  
+  
+  
+</main>
+</Layout>
